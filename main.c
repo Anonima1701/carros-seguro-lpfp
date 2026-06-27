@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include "veiculo.h"
 
 void linha () {
   printf("=≈==================");
@@ -6,8 +9,10 @@ void linha () {
 
 //Função principal
 int main() {
+  setlocale(LC_ALL, "Portuguese"); //para ser aceito caracteres especiais.
+  
   //Variaveis
-  linha();
+  Veiculo v;
   int escolha;
   
   do {
@@ -15,13 +20,15 @@ int main() {
       int valor1;
       
       // Estrutura do Menu
-      printf("%s", linha);
+      linha();
       printf("       Menu Principal         \n");
       printf("%d", valor1);
-      printf(linha);
-      printf("1. Receber valor\n");
-      printf("2. Exit\n");
-      printf(linha);
+      linha();
+      printf("1. Cadastrar Veículo\n");
+      printf("2. Exibir Veículo\n");
+      printf("3. Receber valor\n");
+      printf("4. Exit\n");
+      linha();
       printf("Escreva sua escolha: ");
   
       // Verificação de escolha
@@ -33,17 +40,30 @@ int main() {
   
       // Opções a serem usadas
       switch (escolha) {
+          
           case 1:
+              printf("\n-> Iniciando Cadastro do Veículo\n");
+              cadastrarVeiculo(&v);
+              break;
+          case 2 :
+              printf("\n-> Exibindo informações do veículo\n");
+              exibirVeiculo(&v);
+              break;
+          case 3:
               printf("\n-> Valor: \n");
               scanf("%d", &valor1);
               break;
-          case 2:
+          case 4:
               printf("\nFinalizando tarefa!\n");
               break;
           default:
               printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
       }
-  } while (escolha != 2);
+
+      printf("\n");
+
+  } while (escolha != 4);
 
 return 0;
+
 }
