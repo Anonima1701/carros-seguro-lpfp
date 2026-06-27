@@ -1,6 +1,5 @@
 //LAUANNA VICTORIA - MATRICULA: 20242SI0004
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "veiculo.h"
 
