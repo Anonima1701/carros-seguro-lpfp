@@ -22,7 +22,7 @@ int main() {
   do {
       //Atualizar valor
       int valor1;
-      
+
       // Estrutura do Menu
       system("clear");
       linha();
@@ -52,7 +52,7 @@ int main() {
   
       // Opções a serem usadas
       switch (escolha) {
-          
+
           case 1:
               printf("\n-> Iniciando Cadastro do Veículo\n");
               cadastrarVeiculo(&v);
@@ -63,19 +63,19 @@ int main() {
               exibirVeiculo(&v);
               break;
 
-	  case 3:
+          case 3:
               system("clear");
               printf("\n-> Iniciando Cadastro do Condutor!\n");
               cadastrar_condutor(&v);
               break;
 
-	  case 4:
-	      system("clear");
+          case 4:
+              system("clear");
               printf("\n-> Exibindo Informações do Condutor!\n");
               exibirr_condutor(&v);
               break;
 
-	  case 5:
+          case 5:
               system("clear");
               printf("\nFinalizando tarefa!\n");
               CriarArquivo (&v);
