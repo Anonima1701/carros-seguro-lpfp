@@ -7,7 +7,7 @@
 void flush_in() {
     int ch;
     while ((ch = getchar()) != '\n' && ch != EOF);
-}
+} 
 
 void cadastrar_condutor(Condutor *c) {
     printf("\n--- CADASTRO DE CONDUTOR ---\n");
