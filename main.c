@@ -3,6 +3,7 @@
 #include <locale.h>
 #include "veiculo.h"
 #include "salvar.h"
+#include "condutor.h"
 
 void linha () {
   printf("======================================\n");
@@ -16,7 +17,8 @@ int main() {
   Veiculo v;
   int escolha;
   VerificarExistencia();
-  
+  Condutor c;
+
   do {
       //Atualizar valor
       int valor1;
@@ -26,14 +28,18 @@ int main() {
       linha();
       printf("       Menu Principal         \n");
       linha();
-      exibirVeiculo(&v);
+     // exibirVeiculo(&v);
       printf("\n");
       linha();
       printf("1. Cadastrar Veículo\n");
-
-      //printf("2. Exibir Veículo\n");
-
-      printf("2. Exit\n");
+      linha()
+      printf("2. Exibir Veiculo\n");
+      linha();
+      printf("3. Cadastrar Condutor\n");
+      linha()
+      printf("4. Exibir Condutor");
+      linha()
+      printf("5. Exit\n");
       linha();
       printf("Escreva sua escolha: ");
   
@@ -52,14 +58,24 @@ int main() {
               cadastrarVeiculo(&v);
               break;
 
-          /*
           case 2 :
               printf("\n-> Exibindo informações do veículo\n");
               exibirVeiculo(&v);
               break;
-          */
 
-          case 2:
+	  case 3:
+              system("clear");
+              printf("\n-> Iniciando Cadastro do Condutor!\n");
+              cadastrar_condutor(&v);
+              break;
+
+	  case 4:
+	      system("clear");
+              printf("\n-> Exibindo Informações do Condutor!\n");
+              exibirr_condutor(&v);
+              break;
+
+	  case 5:
               system("clear");
               printf("\nFinalizando tarefa!\n");
               CriarArquivo (&v);
