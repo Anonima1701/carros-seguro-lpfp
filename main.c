@@ -3,10 +3,14 @@
 #include <locale.h>
 #include "veiculo.h"
 #include "salvar.h"
+<<<<<<< HEAD
 #include <string.h>
 #include "Relatorio.h"
 #indef RELATORIO_H
 #define RELATORIO_H
+=======
+#include "condutor.h"
+>>>>>>> 3300622f27a92c8337b9e9dfe68c7719aa055acd
 
 void linha () {
   printf("======================================\n");
@@ -20,24 +24,28 @@ int main() {
   Veiculo v;
   int escolha;
   VerificarExistencia();
-  
+  Condutor c;
+
   do {
       //Atualizar valor
       int valor1;
-      
+
       // Estrutura do Menu
       system("clear");
       linha();
       printf("       Menu Principal         \n");
       linha();
-      exibirVeiculo(&v);
       printf("\n");
       linha();
       printf("1. Cadastrar Veículo\n");
-
-      //printf("2. Exibir Veículo\n");
-
-      printf("2. Exit\n");
+      linha();
+      printf("2. Exibir Veiculo\n");
+      linha();
+      printf("3. Cadastrar Condutor\n");
+      linha();
+      printf("4. Exibir Condutor");
+      linha();
+      printf("5. Exit\n");
       linha();
       printf("Escreva sua escolha: ");
   
@@ -50,20 +58,30 @@ int main() {
   
       // Opções a serem usadas
       switch (escolha) {
-          
+
           case 1:
               printf("\n-> Iniciando Cadastro do Veículo\n");
               cadastrarVeiculo(&v);
               break;
 
-          /*
           case 2 :
               printf("\n-> Exibindo informações do veículo\n");
               exibirVeiculo(&v);
               break;
-          */
 
-          case 2:
+          case 3:
+              system("clear");
+              printf("\n-> Iniciando Cadastro do Condutor!\n");
+              cadastrar_condutor(&v);
+              break;
+
+          case 4:
+              system("clear");
+              printf("\n-> Exibindo Informações do Condutor!\n");
+              exibirr_condutor(&v);
+              break;
+
+          case 5:
               system("clear");
               printf("\nFinalizando tarefa!\n");
               CriarArquivo (&v);
@@ -77,6 +95,7 @@ int main() {
 
 return 0;
 
+<<<<<<< HEAD
 } 
 
  
@@ -203,3 +222,6 @@ printf("Condutor: %s\n", c->condutor.Nome);
 printf("Veiculo: %s\n", c->veiculo.Marca, c->veiculo.Modelo, c->veiculo.ano);
 printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);
 printf("Data: %s\n", c->data);  
+=======
+}
+>>>>>>> 3300622f27a92c8337b9e9dfe68c7719aa055acd
