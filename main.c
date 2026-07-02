@@ -32,13 +32,13 @@ int main() {
       printf("\n");
       linha();
       printf("1. Cadastrar Veículo\n");
-      linha()
+      linha();
       printf("2. Exibir Veiculo\n");
       linha();
       printf("3. Cadastrar Condutor\n");
-      linha()
+      linha();
       printf("4. Exibir Condutor");
-      linha()
+      linha();
       printf("5. Exit\n");
       linha();
       printf("Escreva sua escolha: ");
