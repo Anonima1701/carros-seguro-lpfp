@@ -28,7 +28,6 @@ int main() {
       linha();
       printf("       Menu Principal         \n");
       linha();
-     // exibirVeiculo(&v);
       printf("\n");
       linha();
       printf("1. Cadastrar Veículo\n");
