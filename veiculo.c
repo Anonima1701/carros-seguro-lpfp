@@ -28,7 +28,7 @@ void cadastrarVeiculo(Veiculo *v) {
 }
 
 void exibirVeiculo(Veiculo *v) {
-    //system("clear");
+    system("clear");
 
     printf("\n------ Informações do Veículo ------\n");
     printf("Marca: %s\n", v->marca);
