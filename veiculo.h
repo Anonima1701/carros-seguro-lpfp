@@ -12,5 +12,6 @@
 
 void cadastrarVeiculo(Veiculo *v);
 void exibirVeiculo(Veiculo *v);
+void pausar();
 
 #endif

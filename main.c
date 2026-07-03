@@ -9,6 +9,12 @@ void linha () {
   printf("======================================\n");
 }
 
+void pausar() {
+  printf("\nPressione Enter para continuar...");
+  while (getchar() != '\n');
+  getchar();
+}
+
 //Função principal
 int main() {
   setlocale(LC_ALL, "Portuguese"); //para ser aceito caracteres especiais.
@@ -27,16 +33,14 @@ int main() {
       system("clear");
       linha();
       printf("       Menu Principal         \n");
-      linha();
-      printf("\n");
-      linha();
+      linha();  
       printf("1. Cadastrar Veículo\n");
       linha();
       printf("2. Exibir Veiculo\n");
       linha();
       printf("3. Cadastrar Condutor\n");
       linha();
-      printf("4. Exibir Condutor");
+      printf("4. Exibir Condutor\n");
       linha();
       printf("5. Exit\n");
       linha();
@@ -62,17 +66,17 @@ int main() {
               exibirVeiculo(&v);
               break;
 
-          case 3:
-              system("clear");
-              printf("\n-> Iniciando Cadastro do Condutor!\n");
-              cadastrar_condutor(&v);
-              break;
+          //case 3:
+             // system("clear");
+              //printf("\n-> Iniciando Cadastro do Condutor!\n");
+              //cadastrar_condutor(&c);
+              //break;
 
-          case 4:
-              system("clear");
-              printf("\n-> Exibindo Informações do Condutor!\n");
-              exibirr_condutor(&v);
-              break;
+          //case 4:
+              //system("clear");
+              //printf("\n-> Exibindo Informações do Condutor!\n");
+              //exibir_condutor(&c);
+              //break;//
 
           case 5:
               system("clear");
@@ -84,7 +88,7 @@ int main() {
       }
       printf("\n");
 
-  } while (escolha != 2);
+  } while (escolha != 5);
 
 return 0;
 

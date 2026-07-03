@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include "condutor.h"
 
@@ -73,6 +74,8 @@ void cadastrar_condutor(Condutor *c) {
 }
 
 void exibir_condutor(Condutor *c) {
+    system("clear");
+
     printf("\n---------------------------------\n");
     printf("Nome: %s\n", c->nome);
     printf("RG: %s\n", c->rg);
@@ -80,4 +83,6 @@ void exibir_condutor(Condutor *c) {
     printf("Sinistros: %d\n", c->sinistros);
     printf("CNH: %c\n", c->cnh);
     printf("---------------------------------\n");
+
+    pausar();
 }
