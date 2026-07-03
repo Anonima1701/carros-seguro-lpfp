@@ -9,6 +9,12 @@ void linha () {
   printf("======================================\n");
 }
 
+void pausar() {
+  printf("\nPressione Enter para continuar...");
+  while (getchar() != '\n');
+  getchar();
+}
+
 //Função principal
 int main() {
   setlocale(LC_ALL, "Portuguese"); //para ser aceito caracteres especiais.
@@ -27,7 +33,7 @@ int main() {
       system("clear");
       linha();
       printf("       Menu Principal         \n");
-      linha();
+      linha();  
       printf("1. Cadastrar Veículo\n");
       linha();
       printf("2. Exibir Veiculo\n");

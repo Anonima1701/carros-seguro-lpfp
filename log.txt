@@ -40,3 +40,59 @@ Valor: R$ 0.00
 Tipo: Nenhum cadastrado
 ---------------------------
 
+------ Veículo Salvo ------
+Marca: 
+Modelo: 0
+Ano: 0
+Valor: R$ 0.00
+Tipo: Nenhum cadastrado
+---------------------------
+
+------ Veículo Salvo ------
+Marca: citroen
+Modelo: sla
+Ano: 2000
+Valor: R$ 23.00
+Tipo: Esportivo
+---------------------------
+
+------ Veículo Salvo ------
+Marca: honda
+Modelo: gol
+Ano: 2028
+Valor: R$ 20.00
+Tipo: Passeio
+---------------------------
+
+------ Veículo Salvo ------
+Marca: honda
+Modelo: hilux
+Ano: 2028
+Valor: R$ 2027.00
+Tipo: Esportivo
+---------------------------
+
+------ Veículo Salvo ------
+Marca: hona
+Modelo: fff
+Ano: 2028
+Valor: R$ 757.00
+Tipo: Esportivo
+---------------------------
+
+------ Veículo Salvo ------
+Marca: ddd
+Modelo: dd
+Ano: 2028
+Valor: R$ 0.00
+Tipo: Esportivo
+---------------------------
+
+------ Veículo Salvo ------
+Marca: ggn
+Modelo: hnhj
+Ano: 4444
+Valor: R$ 444444.00
+Tipo: Esportivo
+---------------------------
+

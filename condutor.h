@@ -11,5 +11,6 @@ typedef struct {
 
 void cadastrar_condutor(Condutor *c);
 void exibir_condutor(Condutor *c);
- 
+void pausar(); 
+
 #endif
