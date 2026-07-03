@@ -24,3 +24,19 @@ Valor: R$ 100.00
 Tipo: Passeio
 ---------------------------
 
+------ Veículo Salvo ------
+Marca: 
+Modelo: 0
+Ano: 0
+Valor: R$ 0.00
+Tipo: Nenhum cadastrado
+---------------------------
+
+------ Veículo Salvo ------
+Marca: 
+Modelo: 0
+Ano: 0
+Valor: R$ 0.00
+Tipo: Nenhum cadastrado
+---------------------------
+
