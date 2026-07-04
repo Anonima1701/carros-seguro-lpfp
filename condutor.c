@@ -95,5 +95,5 @@ void exibir_condutor(Condutor *c) {
     printf("CNH: %c\n", c->cnh);
     printf("---------------------------------\n");
 
-    pausar();
+    pausar();0
 }
