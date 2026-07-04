@@ -3,34 +3,44 @@
 #include <time.h>
 #include "arquivo.h"
 
-// Definimos o nome do arquivo aqui no topo para que todas as funções tenham acesso
-const char *filename = "log.txt";
+// Definição do nome
+const char *filename = "log";
 
 void VerificarExistencia() {
     struct stat buffer;
+
+    // Define horario local
     time_t t = time(NULL);
     struct tm *tm = localtime(&t);
 
+    // Codigo de verificação e criação
     if (stat(filename, &buffer) != 0) {
         printf("Arquivo não existe. Criando %s...\n", filename);
         
+        // Abre Arquivo e verifica existencia
         FILE *file = fopen(filename, "w");
         if (file == NULL) {
             perror("Erro ao criar o arquivo");
-            return; // void apenas usa 'return;' sem valor
+            return;
         }
-        
+
+        //Cabeçalho do log
         fprintf(file, "--- Início do Log ---\n");
         fprintf(file, "%s", asctime(tm));
+
+        // Fecha Arquivo
         fclose(file);
+
     } else {
         printf("O arquivo já existe. Pronto para uso.\n");
     }
-    // Removido o return 0; daqui
 }
 
 void CriarArquivo(Veiculo *v) {
+    // Abre o arquivo
     FILE *file = fopen(filename, "a");
+
+    // Verifica Existencia
     if (file == NULL) {
         perror("Erro ao abrir o arquivo para salvar o veículo");
         return;
@@ -54,5 +64,6 @@ void CriarArquivo(Veiculo *v) {
     fprintf(file, "Tipo: %s\n", tipo_txt);
     fprintf(file, "---------------------------\n\n");
 
+    // Fecha o Arquivo
     fclose(file);
 }

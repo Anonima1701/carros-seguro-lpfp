@@ -29,9 +29,6 @@ int main() {
   Condutor c;
 
   do {
-      //Atualizar valor
-      int valor1;
-
       // Estrutura do Menu
       system("clear");
       linha();
