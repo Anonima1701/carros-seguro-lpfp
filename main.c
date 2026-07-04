@@ -4,7 +4,7 @@
 #include <locale.h>
 #include "veiculo.h"
 #include "arquivo.h"
-#include "Relatorio.h"
+#include "relatorio.h"
 #include "condutor.h"
 #include "cotacao.h"
 
