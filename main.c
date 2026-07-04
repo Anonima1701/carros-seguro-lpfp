@@ -13,13 +13,6 @@ void linha () {
   printf("======================================\n");
 }
 
-//painel
-void pausar() {
-  printf("\nPressione Enter para continuar...\n");
-  while (getchar() != '\n');
-  getchar();
-}
-
 //Função principal
 int main() {
   setlocale(LC_ALL, "Portuguese"); //para ser aceito caracteres especiais.
