@@ -1,23 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 #include "veiculo.h"
 #include "salvar.h"
-<<<<<<< HEAD
-#include <string.h>
 #include "Relatorio.h"
-#indef RELATORIO_H
-#define RELATORIO_H
-=======
 #include "condutor.h"
->>>>>>> 3300622f27a92c8337b9e9dfe68c7719aa055acd
+#include "cotacao.h"
 
+//função linha
 void linha () {
   printf("======================================\n");
 }
-
+//painel
 void pausar() {
-  printf("\nPressione Enter para continuar...");
+  printf("\nPressione Enter para continuar...\n");
   while (getchar() != '\n');
   getchar();
 }
@@ -29,7 +26,6 @@ int main() {
   //Variaveis
   Veiculo v;
   int escolha;
-  VerificarExistencia();
   Condutor c;
 
   do {
@@ -55,8 +51,7 @@ int main() {
   
       // Verificação de escolha
       if (scanf("%d", &escolha) != 1) {
-          printf("\n[Erro] Opção invalida. Por favor, escolha um número.\n");
-          stdin = freopen(NULL,"r",stdin);
+          printf("\n[Erro] Opção invalida. Por favor, escolha um número entre 1 e 5.\n");
           continue; 
       }
   
@@ -162,10 +157,11 @@ void Listar_cotacoes(Cotacao *lista, int total) {
         printf("Nenhuma cotacao foi encontrada\n");
         return;
 }
+}
  
  printf("\n====== LISTA DE COTACOES ======\n");
 
- for (i = 0;i < total; i++0 {
+ for (i = 0;i < total; i++0) {
       Cotacao *c = &lista[i];
 
       printf("\n[%d] Data: %s\n", i + 1, c-> data);
@@ -175,7 +171,8 @@ void Listar_cotacoes(Cotacao *lista, int total) {
       printf("Valor : R$ %2.f\n", c-> veiculo.valor_de_mercado);
       printf("Premio : R$ %2.f/ano | R$ %2.f/mes\n, c-> premio_anual, c-> premio_mensal);
 }
- printf("\n====================================\n");
+ linha();
+
 }
 //Filtra as cotacoes do condutor
 
@@ -202,7 +199,7 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
 if(!achou) {
    printf("Nenhum resultado encontrado para \"%s\".n", nome);
 }
- printf("\n==============================\n);
+linha();
 }
 
 void menor_cotacao(Cotacao *lista, int total) {
