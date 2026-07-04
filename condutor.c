@@ -1,15 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include "condutor.h"
 
-// Função para limpar a sujeira do buffer do teclado
-void flush_in() {
-    int ch;
-    while ((ch = getchar()) != '\n' && ch != EOF);
-} 
-
+// cadastro do condutor
 void cadastrar_condutor(Condutor *c) {
     printf("\n--- CADASTRO DE CONDUTOR ---\n");
 
@@ -19,31 +13,42 @@ void cadastrar_condutor(Condutor *c) {
 
     // Validação do RG
     while (1) {
-        printf("RG (5 digitos): ");
-        fgets(c->rg, sizeof(c->rg), stdin);
-        c->rg[strcspn(c->rg, "\n")] = '\0';
 
-        if (strlen(c->rg) == 5) {
-            int ok = 1;
-            for (int i = 0; i < 5; i++) {
-                if (!isdigit(c->rg[i])) {
-                    ok = 0;
-                    break;
-                }
+    printf("RG (Primeiros 5 digitos): ");
+    scanf("%s", c->rg);
+
+    int tamanho = 0;
+
+    while (c->rg[tamanho] != '\0')
+        tamanho++;
+
+    if (tamanho == 5) {
+
+        int ok = 1;
+
+        for (int i = 0; i < 5; i++) {
+
+            if (c->rg[i] < '0' || c->rg[i] > '9') {
+                ok = 0;
+                break;
             }
-            if (ok) break;
+
         }
-        printf("Erro: O RG deve ter exatamente 5 numeros. Tente novamente.\n");
+
+        if (ok)
+            break;
     }
 
-    // Validação da idade
+    printf("Erro: O RG deve ter exatamente 5 numeros.\n");
+}
+
+    // Validacão da idade
     while (1) {
         printf("Idade: ");
-        if (scanf("%d", &c->idade) == 1 && c->idade >= 18 && c->idade <= 120) {
+        if (scanf("%d", &c->idade) == 1 && c->idade >= 18 && c->idade <= 75) {
             break;
         }
         printf("Erro: Idade invalida (deve ser maior de 18).\n");
-        flush_in();
     }
 
     // Validação dos sinistros
@@ -53,26 +58,32 @@ void cadastrar_condutor(Condutor *c) {
             break;
         }
         printf("Erro: Quantidade invalida.\n");
-        flush_in();
     }
 
-    flush_in();
 
     // Validação da cnh
     while (1) {
-        printf("Categoria da CNH (A, B ou C): ");
-        scanf("%c", &c->cnh);
-        flush_in();
 
-        c->cnh = toupper(c->cnh);
+    printf("Categoria da CNH (A, B ou C): ");
+    scanf(" %c", &c->cnh);
 
-        if (c->cnh == 'A' || c->cnh == 'B' || c->cnh == 'C') {
-            break;
-        }
-        printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
+    if (c->cnh == 'a') {
+        c->cnh = 'A';
     }
-}
+    else if (c->cnh == 'b') {
+        c->cnh = 'B';
+    }
+    else if (c->cnh == 'c') {
+        c->cnh = 'C';
+    }
 
+    if (c->cnh == 'A' || c->cnh == 'B' || c->cnh == 'C') {
+        break;
+    }
+
+    printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
+}
+// exibição do condutor
 void exibir_condutor(Condutor *c) {
     system("clear");
 

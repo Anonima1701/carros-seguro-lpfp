@@ -51,9 +51,14 @@ int main() {
   
       // Verificação de escolha
       if (scanf("%d", &escolha) != 1) {
-          printf("\n[Erro] Opção invalida. Por favor, escolha um número entre 1 e 5.\n");
-          continue; 
-      }
+    printf("Digite apenas numeros!\n");
+}
+      else if (escolha < 1 || escolha > 5) {
+    printf("Opcao invalida!\n");
+}
+      else {
+    printf("Opcao escolhida: %d\n", escolha);
+}
   
       // Opções a serem usadas
       switch (escolha) {
