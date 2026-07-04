@@ -4,20 +4,13 @@
 #include <locale.h>
 #include "veiculo.h"
 #include "arquivo.h"
-#include "Relatorio.h"
+#include "relatorio.h"
 #include "condutor.h"
 #include "cotacao.h"
 
 //função linha
 void linha () {
   printf("======================================\n");
-}
-
-//painel
-void pausar() {
-  printf("\nPressione Enter para continuar...\n");
-  while (getchar() != '\n');
-  getchar();
 }
 
 //Função principal

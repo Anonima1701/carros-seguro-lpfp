@@ -1,7 +1,7 @@
 //Relatorio(veiculo/cadastramento),Lista,filtra e compara as cotacoes
 #include <stdio.h>
 #include <string.h>
-#include "Relatorio.h"
+#include "relatorio.h"
 
 //Mostra o tipo de veiculo 
 
