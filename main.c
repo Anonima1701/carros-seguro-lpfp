@@ -68,19 +68,7 @@ int main() {
               exibirVeiculo(&v);
               break;
 
-          //case 3:
-             // system("clear");
-              //printf("\n-> Iniciando Cadastro do Condutor!\n");
-              //cadastrar_condutor(&c);
-              //break;
-
-          //case 4:
-              //system("clear");
-              //printf("\n-> Exibindo Informações do Condutor!\n");
-              //exibir_condutor(&c);
-              //break;//
-
-          case 5:
+          case 3:
               system("clear");
               printf("\nFinalizando tarefa!\n");
               CriarArquivo (&v);
@@ -90,7 +78,7 @@ int main() {
       }
       printf("\n");
 
-  } while (escolha != 5);
+  } while (escolha != 3);
 
 return 0;
 }
