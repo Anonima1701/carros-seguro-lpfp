@@ -42,7 +42,7 @@ void CriarArquivo(Veiculo *v) {
 
     // Verifica Existencia
     if (file == NULL) {
-        perror("Erro ao abrir o arquivo para salvar o veículo");
+        perror("Erro ao abrir o arquivo para arquivo o veículo");
         return;
     }
 
