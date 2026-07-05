@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "veiculo.h"
+#include "linha.h"
 
 void cadastrarVeiculo(Veiculo *v) {
     printf("Digite a marca do veículo: ");

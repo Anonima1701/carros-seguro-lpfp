@@ -1,7 +1,9 @@
 //Relatorio(veiculo/cadastramento),Lista,filtra e compara as cotacoes
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "relatorio.h"
+#include "linha.h"
 
 //Mostra o tipo de veiculo
 
@@ -20,11 +22,13 @@ char *tipo_de_veiculo(char tipo) {
 //Lista as cotacoes salvas
 void Listar_cotacoes(Cotacao *lista, int total) {
     int i;
+    system("clear");
 
     if (total == 0) {
-        printf("Nemhuma cotacao encontrada\n");
+        printf("\n-> Nenhuma cotacao encontrada\n");
         return;
     }
+    
 
     printf("\n====== Lista de Cotacoes ======\n");
 
@@ -38,13 +42,15 @@ void Listar_cotacoes(Cotacao *lista, int total) {
         printf(" Valor : R$ %.2f\n", c-> veiculo.valor_mercado);
         printf(" Premio : R$ %.2f/ano | R$ %.2f/mes\n", c-> premio_anual, c-> premio_mensal);
     }
-    printf("\n==================================\n");
+    linha();
 }
 //Filtra as cotacoes do condutor
 void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     int i;
     int achou = 0;
     Cotacao *c;
+
+    system("clear");
 
     printf("\n===== Busca por Condutor =====\n");
     printf("Buscando por: %s\n\n", nome);
@@ -82,9 +88,9 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     }
 
     if (!achou) {
-        printf("Nenhum resultado encontrado para \"%s\".\n", nome);
+        printf("-> Nenhum resultado encontrado para \"%s\".\n", nome);
     }
-    printf("\n==================================\n");
+    linha();
 }
 
 void menor_cotacao(Cotacao *lista, int total) {
@@ -92,7 +98,9 @@ void menor_cotacao(Cotacao *lista, int total) {
     int indice = 0;
 
     if (total == 0) {
-        printf("Nenhuma cotacao foi registrada\n");
+        system("clear");
+
+        printf("-> Nenhuma cotacao foi registrada\n");
         return;
     }
 
@@ -104,12 +112,14 @@ void menor_cotacao(Cotacao *lista, int total) {
 
     Cotacao *c = &lista[indice];
 
+    system("clear");
+
     printf("\n======= MENOR COTACAO ========\n");
     printf("Condutor : %s\n", c->condutor.nome);
     printf("Veiculo : %s %s (%d)\n", c->veiculo.marca, c->veiculo.modelo, c->veiculo.ano);
     printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);
     printf("Data : %s\n", c->data);
-    printf("==================================\n");
+    linha();
 }
 
 

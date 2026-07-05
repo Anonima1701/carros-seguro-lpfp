@@ -8,17 +8,7 @@
 #include "condutor.h"
 #include "cotacao.h"
 #include "menu.h"
-
-//função linha
-void linha () {
-    printf("======================================\n");
-}
-
-//funcao pausar
-void pausar() {
-    printf("\nPressione ENTER para continuar...");
-}
-
+#include "linha.h"
 
 //Função principal
 int main() {
@@ -42,7 +32,7 @@ int main() {
         // Estrutura do Menu
 
         linha();
-        printf("       Menu Principal         \n");
+        printf("         Menu Principal        \n");
         linha();
         printf("1. Cadastro (Veiculo,condutor e calculo de premio)\n");
         linha();
@@ -65,22 +55,23 @@ int main() {
         switch (escolha) {
         case 1:
             system("clear");
-            printf("\n-> Abrindo aba de cadastro\n");
+            printf("\n-> Abrindo Menu de Cadastro\n");
             menuCadastro(&v, &c, &lista, &total);
             break;
 
         case 2 :
             system("clear");
-            printf("\n-> Abrindo Relatórios\n");
+            printf("\n-> Abrindo Menu de Relatórios\n");
             menuRelatorio(lista, total);
             break;
 
         case 3:
             system("clear");
-            printf("\n Finalizando tarefa!\n");
+            printf("\n-> Finalizando tarefa!\n");
             break;
 
         default:
+            system("clear");
             printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
         }
 

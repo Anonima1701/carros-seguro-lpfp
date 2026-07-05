@@ -8,10 +8,7 @@
 #include "cotacao.h"
 #include "arquivo.h"
 #include "relatorio.h"
-
-void linhaMenu(void) {
-    printf("================================\n");
-}
+#include "linha.h"
 
 void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     int op;
@@ -20,17 +17,25 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     Cotacao nova;
 
     do {
-        linhaMenu();
+        linha();
+        printf("         Menu de Cadastro        \n");
+        linha();
         printf("1. Cadastrar veiculo\n");
+        linha();
         printf("2. Exibir veiculos cadastrados\n");
+        linha();
         printf("3. Cadastrar condutor\n");
+        linha();
         printf("4. Exibir condutores cadastrados\n");
+        linha();
         printf("5. Calcular cotações \n");
+        linha();
         printf("6. Voltar\n");
-        linhaMenu();
-        printf("Escolha: ");
+        linha();
+        printf("Escreva sua escolha: ");
 
         if (scanf("%d", &op) != 1) {
+            system("clear");
             printf("Digite apenas numeros!\n");
             while (getchar() != '\n');
             op = -1;
@@ -59,6 +64,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
 
         case 5:
             if (!temVeiculo || !temCondutor) {
+                system("clear");
                 printf("Cadastre primeiro o veiculo e o condutor.\n");
                 break;
             }
@@ -83,11 +89,12 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
 
         case 6:
             system("clear");
-            printf("\nVoltando ao menu principal");
+            printf("\n-> Voltando ao menu principal");
             break;
 
         default:
-            printf("Opcao invalida\n");
+            system("clear");
+            printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
         }
     }  while (op != 6);
 }
@@ -97,14 +104,21 @@ void menuRelatorio (Cotacao *lista, int total) {
     char nome[80];
 
     do {
-        printf("\n===== RELATORIOS =====\n");
+        linha();
+        printf("         Menu de Relatorios        \n");
+        linha();
         printf("1. Listar todas as cotacoes\n");
+        linha();
         printf("2. Filtrar por nome do condutor\n");
+        linha();
         printf("3. Exibir menor cotacao\n");
+        linha();
         printf("4. Voltar\n");
-        printf("Escolha: ");
+        linha();
+        printf("Escreva sua escolha: ");
 
         if (scanf("%d", &op) != 1) {
+            system("clear");
             printf("Digite apenas numeros!\n");
             while (getchar() != '\n');
             op = -1;
@@ -135,9 +149,12 @@ void menuRelatorio (Cotacao *lista, int total) {
             break;
 
         case 4:
+            system("clear");
+            printf("\n-> Voltando ao menu principal");
             break;
         default:
-            printf("Opcao invalida!\n");
+            system("clear");
+            printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
         }
     } while (op != 4);
 }
