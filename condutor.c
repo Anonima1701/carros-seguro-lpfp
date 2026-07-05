@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "condutor.h"
+#include "linha.h"
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -22,7 +23,7 @@ void cadastrar_condutor(Condutor *c) {
     // Validação do RG
     while (1) {
 
-        printf("RG (Primeiros 5 digitos): ");
+        printf("RG (Primeiros 5 dígitos): ");
         scanf("%s", c->rg);
 
         int tamanho = 0;
@@ -61,7 +62,7 @@ void cadastrar_condutor(Condutor *c) {
 
     // Validação dos sinistros
     while (1) {
-        printf("Numero de sinistros (ultimos 3 anos): ");
+        printf("Número de sinistros (últimos 3 anos): ");
         if (scanf("%d", &c->sinistros) == 1 && c->sinistros >= 0) {
             break;
         }
@@ -103,4 +104,6 @@ void exibir_condutor(Condutor *c) {
     printf("Idade: %d anos\n", c->idade);
     printf("Sinistros: %d\n", c->sinistros);
     printf("CNH: %c\n", c->cnh);
+
+    pausar();
 }

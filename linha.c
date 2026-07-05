@@ -7,3 +7,9 @@
 void linha () {
     printf(ANSI_COLOR_CYAN "======================================\n" ANSI_COLOR_RESET);
 }
+
+void pausar() {
+    printf("\nPressione ENTER para continuar...");
+    int ch;
+    while ((ch = getchar()) != '\n' && ch != EOF);
+}

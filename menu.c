@@ -24,12 +24,14 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     Cotacao nova;
 
     do {
+    system("clear");
+
         linha();
         printf(ANSI_COLOR_YELLOW "         Menu de Cadastro        \n" ANSI_COLOR_RESET);
         linha();
-        printf("1. Cadastrar veiculo\n");
+        printf("1. Cadastrar veículo\n");
         linha();
-        printf("2. Exibir veiculo cadastrado\n");
+        printf("2. Exibir veículo cadastrado\n");
         linha();
         printf("3. Cadastrar condutor\n" );
         linha();
@@ -92,6 +94,8 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
 
                 printf(ANSI_COLOR_RED"Erro ao salvar cotacao.\n"ANSI_COLOR_RESET);
             }
+
+            pausar();
             break;
 
         case 6:
@@ -111,6 +115,8 @@ void menuRelatorio (Cotacao *lista, int total) {
     char nome[80];
 
     do {
+    system("clear");
+
         linha();
         printf(ANSI_COLOR_GREEN"         Menu de Relatorios        \n"ANSI_COLOR_RESET);
         linha();
@@ -136,6 +142,7 @@ void menuRelatorio (Cotacao *lista, int total) {
         switch (op) {
         case 1:
             Listar_cotacoes(lista, total);
+            pausar();
             break;
 
         case 2:
@@ -149,10 +156,12 @@ void menuRelatorio (Cotacao *lista, int total) {
             nome[i] = '\0';
 
             filtrar_por_condutor(lista, total, nome);
+            pausar();
             break;
 
         case 3:
             menor_cotacao(lista, total);
+            pausar();
             break;
 
         case 4:
@@ -165,25 +174,3 @@ void menuRelatorio (Cotacao *lista, int total) {
         }
     } while (op != 4);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
