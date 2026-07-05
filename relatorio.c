@@ -32,10 +32,10 @@ void Listar_cotacoes(Cotacao *lista, int total) {
         Cotacao *c = &lista[i];
 
         printf("\n[%d] Data: %s\n", i + 1, c -> data);
-        printf(" Condutor : %s\n", c-> condutor.Nome);
-        printf(" Veiculo : %s %s (%d)\n ", c-> veiculo.Marca, c-> veiculo.Modelo, c-> veiculo.ano);
+        printf(" Condutor : %s\n", c-> condutor.nome);
+        printf(" Veiculo : %s %s (%d)\n ", c-> veiculo.marca, c-> veiculo.modelo, c-> veiculo.ano);
         printf(" Tipo : %s\n", tipo_de_veiculo(c-> veiculo.tipo));
-        printf(" Valor : R$ %.2f\n", c-> veiculo.valor_de_mercado);
+        printf(" Valor : R$ %.2f\n", c-> veiculo.valor_mercado);
         printf(" Premio : R$ %.2f/ano | R$ %.2f/mes\n", c-> premio_anual, c-> premio_mensal);
     }
     printf("\n==================================\n");

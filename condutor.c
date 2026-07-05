@@ -83,6 +83,7 @@ void cadastrar_condutor(Condutor *c) {
 
     printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
 }
+}
 // exibição do condutor
 void exibir_condutor(Condutor *c) {
     system("clear");
@@ -95,5 +96,5 @@ void exibir_condutor(Condutor *c) {
     printf("CNH: %c\n", c->cnh);
     printf("---------------------------------\n");
 
-    pausar();0
+    pausar();
 }
