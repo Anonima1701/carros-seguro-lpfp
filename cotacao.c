@@ -1,5 +1,6 @@
 #include "cotacao.h"
 #include <time.h>
+#include <stdio.h>
 
 float calcularTaxa(Veiculo *v, Condutor *c)
 {
@@ -52,7 +53,7 @@ void calcularCotacao(Cotacao *c)
     time_t t = time(NULL);
     struct tm *tm = localtime(&t);
 
-    sprintf(cotacao->data,
+    sprintf(c->data,
             "%02d/%02d/%04d",
             tm->tm_mday,
             tm->tm_mon + 1,

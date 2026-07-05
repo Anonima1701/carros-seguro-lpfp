@@ -10,7 +10,7 @@ typedef struct {
     Condutor condutor;
     float premio_anual;
     float premio_mensal;
-    char data[11]
+    char data[11];
 } Cotacao;
 
 //protótipos das funções
