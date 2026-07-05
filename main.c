@@ -30,11 +30,12 @@ int main() {
   Condutor c;
   Cotacao *lista = NULL;
   int total = 0;
-  
+
   //carregar cotações
   Listar_cotacoes(lista, total);
   total = CarregarArquivo(&lista);
 
+  system("Clear");
 
   do {
         // Estrutura do Menu
@@ -84,7 +85,7 @@ int main() {
         
         printf("\n");
 
-    } while (escolha != 5);
+    } while (escolha != 3);
 free(lista);
 return 0;
 }
