@@ -24,7 +24,7 @@ void cadastrar_condutor(Condutor *c) {
     // Validação do RG
     while (1) {
 
-        printf(ANSI_COLOR_RED "RG (Primeiros 5 dígitos): " ANSI_COLOR_RESET);
+        printf("RG (Primeiros 5 dígitos): ");
         scanf("%s", c->rg);
 
         int tamanho = 0;

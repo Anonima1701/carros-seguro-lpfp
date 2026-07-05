@@ -38,13 +38,13 @@ int main() {
     do {
         // Estrutura do Menu
         linha();
-        printf(ANSI_COLOR_GREEN"         Menu Principal        \n"ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_GREEN "         Menu Principal        \n" ANSI_COLOR_RESET);
         linha();
         printf(ANSI_COLOR_YELLOW "1. Cadastro (Veiculo,condutor e calculo de premio)\n" ANSI_COLOR_RESET);
         linha();
-        printf(ANSI_COLOR_YELLOW "2. Relatorios\n"ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_YELLOW "2. Relatorios\n" ANSI_COLOR_RESET);
         linha();
-        printf(ANSI_COLOR_YELLOW "3. Exit\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_RED "3. Exit\n" ANSI_COLOR_RESET);
         linha();
         printf(ANSI_COLOR_GREEN "Escreva sua escolha: "ANSI_COLOR_RESET);
 
@@ -59,13 +59,13 @@ int main() {
         switch (escolha) {
         case 1:
             system("clear");
-            printf(ANSI_COLOR_GREEN "\n-> Abrindo Menu de Cadastro\n" ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_YELLOW "\n-> Abrindo Menu de Cadastro\n" ANSI_COLOR_RESET);
             menuCadastro(&v, &c, &lista, &total);
             break;
 
         case 2 :
             system("clear");
-            printf(ANSI_COLOR_GREEN "\n-> Abrindo Menu de Relatórios\n" ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_YELLOW "\n-> Abrindo Menu de Relatórios\n" ANSI_COLOR_RESET);
             menuRelatorio(lista, total);
             break;
 
