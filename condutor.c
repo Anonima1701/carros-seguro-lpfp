@@ -90,11 +90,10 @@ void cadastrar_condutor(Condutor *c) {
 void exibir_condutor(Condutor *c) {
     system("clear");
 
-    printf("\n---------------------------------\n");
+    printf("\n------ Informações do Condutor ------\n");
     printf("Nome: %s\n", c->nome);
     printf("RG: %s\n", c->rg);
     printf("Idade: %d anos\n", c->idade);
     printf("Sinistros: %d\n", c->sinistros);
     printf("CNH: %c\n", c->cnh);
-    printf("---------------------------------\n");
 }

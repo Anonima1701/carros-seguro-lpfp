@@ -38,7 +38,7 @@ void exibirVeiculo(Veiculo *v) {
         return;
     }
 
-    printf("\n------ Informações do Veículo ------\n");
+    printf("\n------ Informações do Veículo -------\n");
     printf("Marca: %s\n", v->marca);
     printf("Modelo: %s\n", v->modelo);
     printf("Ano: %d\n", v->ano);

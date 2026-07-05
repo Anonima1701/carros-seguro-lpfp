@@ -22,7 +22,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
         linha();
         printf("1. Cadastrar veiculo\n");
         linha();
-        printf("2. Exibir veiculos cadastrados\n");
+        printf("2. Exibir veiculo cadastrado\n");
         linha();
         printf("3. Cadastrar condutor\n");
         linha();
@@ -65,7 +65,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
         case 5:
             if (!temVeiculo || !temCondutor) {
                 system("clear");
-                printf("Cadastre primeiro o veiculo e o condutor.\n");
+                printf("\n-> Cadastre primeiro o veiculo e o condutor.\n");
                 break;
             }
 
