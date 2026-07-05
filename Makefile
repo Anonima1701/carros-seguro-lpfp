@@ -3,10 +3,10 @@ C_FLAGS = -Wall -Wextra
 
 all: cotacao
 
-cotacao: main.o veiculo.o arquivo.o condutor.o relatorio.o cotacao.o
-	$(CC) $(C_FLAGS) main.o veiculo.o arquivo.o condutor.o relatorio.o cotacao.o -o cotacao
-
-main.o: main.c veiculo.h arquivo.h condutor.h cotacao.h relatorio.h
+cotacao: main.o veiculo.o arquivo.o condutor.o relatorio.o cotacao.o menu.o
+	$(CC) $(C_FLAGS) main.o veiculo.o arquivo.o condutor.o relatorio.o cotacao.o menu.o -o cotacao
+	
+main.o: main.c veiculo.h arquivo.h condutor.h cotacao.h relatorio.h menu.h
 	$(CC) -c main.c -o main.o
 
 veiculo.o: veiculo.c veiculo.h

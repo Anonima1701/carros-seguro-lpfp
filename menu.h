@@ -1,10 +1,11 @@
-#ifndef menu_h
-#define menu_h
+#ifndef MENU_H
+#define MENU_H
 
-int op;
+#include "veiculo.h"
+#include "condutor.h"
+#include "cotacao.h"
 
-void menuCadastro;
-void menuRelatorio;
-
+void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total);
+void menuRelatorio(Cotacao *lista, int total);
 
 #endif

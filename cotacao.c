@@ -45,7 +45,7 @@ float calcularPremioMensal(float premioAnual)
     return premioAnual / 12.0;
 }
 
-void calcularCotacao(Cotacao *c)
+void calcCotacao(Cotacao *c)
 {
     c->premio_anual = calcularPremioAnual(&c->veiculo, &c->condutor);
     c->premio_mensal = calcularPremioMensal(c->premio_anual);

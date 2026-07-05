@@ -7,6 +7,7 @@
 #include "relatorio.h"
 #include "condutor.h"
 #include "cotacao.h"
+#include "menu.h"
 
 //função linha
 void linha () {
@@ -65,13 +66,13 @@ int main() {
             case 1:
                 system("clear");
                 printf("\n-> Abrindo aba de cadastro\n");
-                void menuCadastro();
+                menuCadastro(&v, &c, &lista, &total);
             break;
 
             case 2 :
                 system("clear");
                 printf("\n-> Abrindo Relatórios\n");
-                void menuRelatorio();
+                menuRelatorio(lista, total);
             break;
 
             case 3:
