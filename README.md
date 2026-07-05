@@ -9,6 +9,3 @@ Sistema de cotação de carros:
   
   $ ./cotacao
   ```
-- To-Do:
-  - Retomar da ultima sessão.
-  - Mudar modo de arquivamento para binário.
