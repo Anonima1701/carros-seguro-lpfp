@@ -7,7 +7,7 @@
 void cadastrar_condutor(Condutor *c) {
     system("clear");
 
-    printf("\n--- CADASTRO DE CONDUTOR ---\n");
+    printf("\n------ Cadastro de Condutor ------\n");
 
     printf("Nome completo: ");
     fgets(c->nome, sizeof(c->nome), stdin);
