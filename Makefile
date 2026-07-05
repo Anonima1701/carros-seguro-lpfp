@@ -24,6 +24,8 @@ relatorio.o: relatorio.c relatorio.h cotacao.h
 cotacao.o: cotacao.c cotacao.h veiculo.h condutor.h
 	$(CC) -c cotacao.c -o cotacao.o
 
+menu.o: menu.c menu.h veiculo.h condutor.h cotacao.h arquivo.h relatorio.h
+	$(CC) -c menu.c -o menu.o
 clean:
 	rm -f *.o cotacao
 

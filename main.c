@@ -18,80 +18,67 @@ void pausar() {
     printf("\nPressione ENTER para continuar...");
 }
 
+
 //Função principal
 int main() {
-  setlocale(LC_ALL, "Portuguese"); //para ser aceito caracteres especiais.
-  
+  setlocale(LC_ALL, "Portuguese_Brazil"); //para ser aceito caracteres especiais.
+
+  //carregar cotações
+  Listar_cotacoes(lista, total);
   //Variaveis
   Veiculo v;
   int escolha;
   Condutor c;
 
   do {
-      // Estrutura do Menu
-      system("clear");
-      linha();
-      printf("       Menu Principal         \n");
-      linha();  
-      printf("1. Cadastrar Veículo\n");
-      linha();
-      printf("2. Exibir Veiculo\n");
-      linha();
-      printf("3. Cadastrar Condutor\n");
-      linha();
-      printf("4. Exibir Condutor\n");
-      linha();
-      printf("5. Exit\n");
-      linha();
-      printf("Escreva sua escolha: ");
-  
-      // Verificação de escolha
-      if (scanf("%d", &escolha) != 1) {
-    printf("Digite apenas numeros!\n");
-}
-      else if (escolha < 1 || escolha > 5) {
-    printf("Opcao invalida!\n");
-}
-      else {
-    printf("Opcao escolhida: %d\n", escolha);
-}
-  
-      // Opções a serem usadas
-      switch (escolha) {
+        // Estrutura do Menu
 
-          case 1:
-              printf("\n-> Iniciando Cadastro do Veículo\n");
-              cadastrarVeiculo(&v);
-              break;
+        linha();
+        printf("       Menu Principal         \n");
+        linha();  
+        printf("1. Cadastro (Veiculo,condutor e calculo de premio)\n");
+        linha();
+        printf("2. Relatorios\n");
+        linha();
+        printf("3. Exit\n");
+        linha();
+        printf("Escreva sua escolha: ");
 
-          case 2 :
-              printf("\n-> Exibindo informações do veículo\n");
-              exibirVeiculo(&v);
-              break;
+        // Verificação de escolha
+        if (scanf("%d", &escolha) != 1) {
+            printf("Digite apenas numeros!\n");
+        } else if (escolha < 1 || escolha > 3) {
+            printf("Opcao invalida!\n");
+        } else {
+            printf("Opcao escolhida: %d\n", escolha);
+        }
+    
+        // Opções a serem usadas
+        switch (escolha) {
+            case 1:
+                system("clear");
+                printf("\n-> Abrindo aba de cadastro\n");
+                void menuCadastro();
+            break;
 
-          //case 3:
-             // system("clear");
-              //printf("\n-> Iniciando Cadastro do Condutor!\n");
-              //cadastrar_condutor(&c);
-              //break;
+            case 2 :
+                system("clear");
+                printf("\n-> Abrindo Relatórios\n");
+                void menuRelatorio();
+            break;
 
-          //case 4:
-              //system("clear");
-              //printf("\n-> Exibindo Informações do Condutor!\n");
-              //exibir_condutor(&c);
-              //break;//
+            case 3:
+                system("clear");
+                printf("\n Finalizando tarefa!\n");
+            break;
 
-          case 5:
-              system("clear");
-              printf("\nFinalizando tarefa!\n");
-              CriarArquivo (&v);
-              break;
-          default:
-              printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
-      }
-      printf("\n");
+            default:
+                printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
+        }
+        
+        printf("\n");
 
-  } while (escolha != 5);
+    } while (escolha != 5);
 
 return 0;
 }

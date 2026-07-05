@@ -30,11 +30,11 @@ void cadastrarVeiculo(Veiculo *v) {
 }
 
 void exibirVeiculo(Veiculo *v) {
-    system("clear");
+    //system("clear");
     if (v == NULL) {
-    printf("Veiculo inexistente!\n");
-    return;
-}
+        printf("Veiculo inexistente!\n");
+        return;
+    }
 
     printf("\n------ Informações do Veículo ------\n");
     printf("Marca: %s\n", v->marca);
@@ -57,6 +57,4 @@ void exibirVeiculo(Veiculo *v) {
             printf("Tipo desconhecido\n");
             break;
     }
-
-    pausar();
 }

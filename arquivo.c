@@ -7,13 +7,12 @@ const char *filename = "log";
 
 void verificarExistencia() {
 
-    FILE *file;
+    FILE *file = fopen(filename, "ab");
 
     // Define horário local
     time_t t = time(NULL);
     struct tm *tm = localtime(&t);
 
-    file = fopen(filename, "r");
 
     if (file == NULL) {
 
@@ -50,12 +49,12 @@ void CriarArquivo(Veiculo *v) {
         return;
     }
 
-    const char* tipo_txt;
+    const char *log;
     switch (v->tipo) {
-        case 'P': tipo_txt = "Passeio"; break;
-        case 'U': tipo_txt = "Utilitário"; break;
-        case 'E': tipo_txt = "Esportivo"; break;
-        default:  tipo_txt = "Nenhum cadastrado"; break;
+        case 'P': log = "Passeio"; break;
+        case 'U': log = "Utilitário"; break;
+        case 'E': log = "Esportivo"; break;
+        default:  log = "Nenhum cadastrado"; break;
     }
 
     fprintf(file, "------ Veículo Salvo ------\n");
@@ -67,4 +66,62 @@ void CriarArquivo(Veiculo *v) {
     fprintf(file, "---------------------------\n\n");
 
     fclose(file);
+}
+int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova){
+    Cotacao *temp = realloc (*lista, (*total + 1)) * sizeof(Cotacao);
+
+    if (temp == NUL
+    ){
+        printf("Erro: nao foi possivel realocar memoria.\n");
+    return 0;
+}
+*lista = temp;
+(*lista)[*total] = nova;
+*(total)++;
+
+return 1;
+}
+
+int CarregarArquivo(Cotacao **lista[]) {
+
+    FILE *arquivo;
+    Cotacao temp;
+    int total = 0;
+
+    *lista = NULL;
+    arquivo = fopen("log", "rb");
+
+    if (arquivo == NULL) {
+        return 0;
+    }
+
+    while (fread(&temp, sizeof(Cotacao), 1, arquivo) == 1) {
+        if(!adicionarCotacao(lista, &total, temp){
+            fclose(arquivo)
+            return total;
+        })
+    }
+
+    fclose(arquivo);
+    return total;
+}
+
+void SalvarArquivo(Cotacao *c) {
+
+    FILE *arquivo;
+
+    arquivo = fopen("log", "ab");
+
+    if (arquivo == NULL) {
+        printf("Erro ao abrir arquivo.\n");
+        return 0;
+    }
+
+   if (fwrite(c, sizeof(Cotacao), 1, arquivo) != 1){
+    printf("Erro ao salvar cotação\n");
+    fclose(arquivo);
+   }
+
+    fclose(arquivo);
+    return 1;
 }
