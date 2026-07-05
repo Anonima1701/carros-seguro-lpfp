@@ -12,12 +12,6 @@
 #include "linha.h"
 
 
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
-#define ANSI_COLOR_YELLOW  "\x1b[33m"
-#define ANSI_COLOR_CYAN    "\x1b[36m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
-
 //Função principal
 int main() {
     setlocale(LC_ALL, ""); //para ser aceito caracteres especiais.
@@ -38,49 +32,49 @@ int main() {
         system("clear");
 
         linha();
-        printf(ANSI_COLOR_GREEN"         Menu Principal        \n"ANSI_COLOR_RESET);
+        printf("         Menu Principal        \n");
         linha();
-        printf(ANSI_COLOR_YELLOW "1. Cadastro (Veiculo,condutor e calculo de premio)\n" ANSI_COLOR_RESET);
+        printf("1. Cadastro (Veiculo,condutor e calculo de premio)\n");
         linha();
-        printf(ANSI_COLOR_YELLOW "2. Relatorios\n"ANSI_COLOR_RESET);
+        printf("2. Relatorios\n");
         linha();
-        printf(ANSI_COLOR_YELLOW "3. Exit\n" ANSI_COLOR_RESET);
+        printf("3. Exit\n");
         linha();
-        printf(ANSI_COLOR_GREEN "Escreva sua escolha: "ANSI_COLOR_RESET);
+        printf("Escreva sua escolha: ");
 
         // Verificação de escolha
         if (scanf("%d", &escolha) != 1) {
-            printf(ANSI_COLOR_RED "Digite apenas numeros!\n" ANSI_COLOR_RESET);
+            printf("Digite apenas numeros!\n");
             while (getchar() != '\n');
             escolha = -1;
         } else if (escolha < 1 || escolha > 3) {
-            printf(ANSI_COLOR_RED "Opção inválida!\n" ANSI_COLOR_RESET);
+            printf("Opção inválida!\n");
         } else {
-            printf(ANSI_COLOR_GREEN "Opção escolhida: %d\n" ANSI_COLOR_RESET, escolha);
+            printf("Opção escolhida: %d\n", escolha);
         }
 
         // Opções a serem usadas
         switch (escolha) {
         case 1:
             system("clear");
-            printf(ANSI_COLOR_GREEN "\n-> Abrindo Menu de Cadastro\n" ANSI_COLOR_RESET);
+            printf("\n-> Abrindo Menu de Cadastro\n");
             menuCadastro(&v, &c, &lista, &total);
             break;
 
         case 2 :
             system("clear");
-            printf(ANSI_COLOR_GREEN "\n-> Abrindo Menu de Relatórios\n" ANSI_COLOR_RESET);
+            printf("\n-> Abrindo Menu de Relatórios\n");
             menuRelatorio(lista, total);
             break;
 
         case 3:
             system("clear");
-            printf(ANSI_COLOR_YELLOW "\n-> Finalizando tarefa!\n" ANSI_COLOR_RESET);
+            printf("\n-> Finalizando tarefa!\n");
             break;
 
         default:
             system("clear");
-            printf(ANSI_COLOR_RED "\n[Aviso] Opção incorreta! Tente novamente.\n" ANSI_COLOR_RESET);
+            printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
         }
 
         printf("\n");
