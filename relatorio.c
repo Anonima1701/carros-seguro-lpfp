@@ -54,9 +54,9 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome){
     int j = 0;
     int igual = 1;
 
-    while (nome[j] != '\0' || lista[i].condutor.Nome[j] != '\0') {
+    while (nome[j] != '\0' || lista[i].condutor.nome[j] != '\0') {
 
-        if (nome[j] != lista[i].condutor.Nome[j]) {
+        if (nome[j] != lista[i].condutor.nome[j]) {
             igual = 0;
             break;
         }
@@ -70,9 +70,9 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome){
 
         printf("[%d] %s - %s %s\n",
                i + 1,
-               c->condutor.Nome,
-               c->veiculo.Marca,
-               c->veiculo.Modelo);
+               c->condutor.nome,
+               c->veiculo.marca,
+               c->veiculo.modelo);
 
         printf(" Premio anual : R$ %.2f\n", c->premio_anual);
         printf(" Data: %s\n", c->data);
@@ -105,8 +105,8 @@ for (i = 0; i < total; i++) {
   Cotacao *c = &lista[indice];
 
   printf("\n======= MENOR COTACAO ========\n");
-  printf("Condutor : %s\n", c->condutor.Nome);
-  printf("Veiculo : %s %s (%d)\n", c->veiculo.Marca, c->veiculo.Modelo, c->veiculo.ano);
+  printf("Condutor : %s\n", c->condutor.nome);
+  printf("Veiculo : %s %s (%d)\n", c->veiculo.marca, c->veiculo.modelo, c->veiculo.ano);
   printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);
   printf("Data : %s\n", c->data);
   printf("==================================\n");

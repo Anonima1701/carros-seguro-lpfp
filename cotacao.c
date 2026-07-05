@@ -1,4 +1,5 @@
 #include "cotacao.h"
+#include <time.h>
 
 float calcularTaxa(Veiculo *v, Condutor *c)
 {
@@ -47,4 +48,13 @@ void calcularCotacao(Cotacao *c)
 {
     c->premio_anual = calcularPremioAnual(&c->veiculo, &c->condutor);
     c->premio_mensal = calcularPremioMensal(c->premio_anual);
+
+    time_t t = time(NULL);
+    struct tm *tm = localtime(&t);
+
+    sprintf(cotacao->data,
+            "%02d/%02d/%04d",
+            tm->tm_mday,
+            tm->tm_mon + 1,
+            tm->tm_year + 1900);
 }
