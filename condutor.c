@@ -86,7 +86,6 @@ void cadastrar_condutor(Condutor *c) {
 }
 // exibição do condutor
 void exibir_condutor(Condutor *c) {
-    system("clear");
 
     printf("\n---------------------------------\n");
     printf("Nome: %s\n", c->nome);
@@ -95,6 +94,4 @@ void exibir_condutor(Condutor *c) {
     printf("Sinistros: %d\n", c->sinistros);
     printf("CNH: %c\n", c->cnh);
     printf("---------------------------------\n");
-
-    pausar();
 }
