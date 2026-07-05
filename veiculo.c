@@ -4,6 +4,7 @@
 #include "veiculo.h"
 #include "linha.h"
 
+// Cores
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
 #define ANSI_COLOR_YELLOW  "\x1b[33m"
@@ -12,7 +13,7 @@
 
 void cadastrarVeiculo(Veiculo *v) {
 
-    printf(ANSI_COLOR_YELLOW"\n------ Cadastro de Veiculo ------\n" ANSI_COLOR_RESET);
+    printf(ANSI_COLOR_YELLOW "\n------ Cadastro de Veiculo ------\n" ANSI_COLOR_RESET);
 
     printf("Digite a marca do veículo: ");
     scanf("%s", v->marca);
@@ -29,11 +30,11 @@ void cadastrarVeiculo(Veiculo *v) {
     printf("Digite o valor do veículo: R$ ");
     scanf("%f", &v->valor_mercado);
     while (getchar() != '\n');
-// Loop para garantir que o tipo do veículo seja válido
+    // Loop para garantir que o tipo do veículo seja válido
     do {
         printf("Digite o tipo do veículo (P-Passeio, U-Utilitário, E-Esportivo): ");
         scanf(" %c", &v->tipo);
-// Converte o tipo para maiúsculo, se o usuário digitou em minúsculo.
+        // Converte o tipo para maiúsculo, se o usuário digitou em minúsculo.
         if (v->tipo == 'p') {
             v->tipo = 'P';
         } else if (v->tipo == 'u') {
@@ -46,8 +47,7 @@ void cadastrarVeiculo(Veiculo *v) {
 
     system("clear");
 
-    printf(ANSI_COLOR_GREEN"\nVeículo cadastrado com sucesso!\n"ANSI_COLOR_RESET);
-
+    printf(ANSI_COLOR_GREEN "\n-> Veículo cadastrado com sucesso!\n" ANSI_COLOR_RESET);
 
 }
 //Função para exibir veículo
@@ -55,11 +55,11 @@ void exibirVeiculo(Veiculo *v) {
     system("clear");
 
     if (v == NULL) {
-        printf(ANSI_COLOR_RED"Veículo inexistente!\n"ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_RED "-> Veículo inexistente!\n" ANSI_COLOR_RESET);
         return;
     }
 
-    printf(ANSI_COLOR_YELLOW"\n------ Informações do Veículo -------\n"ANSI_COLOR_RESET);
+    printf(ANSI_COLOR_YELLOW "\n------ Informações do Veículo -------\n" ANSI_COLOR_RESET);
     printf("Marca: %s\n", v->marca);
     printf("Modelo: %s\n", v->modelo);
     printf("Ano: %d\n", v->ano);

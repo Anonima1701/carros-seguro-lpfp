@@ -32,9 +32,9 @@ int main() {
     //carregar cotações
     Listar_cotacoes(lista, total);
     total = CarregarArquivo(&lista);
-    
+
     system("clear");
-    
+
     do {
         // Estrutura do Menu
         linha();
@@ -50,13 +50,9 @@ int main() {
 
         // Verificação de escolha
         if (scanf("%d", &escolha) != 1) {
-            printf("Digite apenas numeros!\n");
+            printf(ANSI_COLOR_RED "Digite apenas numeros!\n" ANSI_COLOR_RESET);
             while (getchar() != '\n');
             escolha = -1;
-        } else if (escolha < 1 || escolha > 3) {
-            printf("Opção inválida!\n");
-        } else {
-            printf("Opção escolhida: %d\n", escolha);
         }
 
         // Opções a serem usadas

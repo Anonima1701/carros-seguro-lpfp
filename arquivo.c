@@ -73,7 +73,7 @@ int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
     Cotacao *temp = realloc (*lista, (*total + 1) * sizeof(Cotacao));
 
     if (temp == NULL) {
-        printf("Erro: não foi possível realocar memória.\n");
+        printf("Erro: Não foi possível realocar memória.\n");
         return 0;
     }
     *lista = temp;
@@ -88,7 +88,6 @@ int CarregarArquivo(Cotacao **lista) {
     FILE *arquivo;
     Cotacao temp;
     int total = 0;
-
 
     arquivo = fopen("log", "rb");
 

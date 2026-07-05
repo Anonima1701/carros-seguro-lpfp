@@ -1,6 +1,7 @@
 //LAUANNA VICTORIA - MATRICULA: 20242SI0004
 #ifndef VEICULO_H
 #define VEICULO_H
+
 // Estrutura para armazenar informações do veículo
 typedef struct veiculo {
     char marca[50];
