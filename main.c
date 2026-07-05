@@ -23,12 +23,18 @@ void pausar() {
 int main() {
   setlocale(LC_ALL, "Portuguese_Brazil"); //para ser aceito caracteres especiais.
 
-  //carregar cotações
-  Listar_cotacoes(lista, total);
+
   //Variaveis
   Veiculo v;
   int escolha;
   Condutor c;
+  Cotacao *lista = NULL;
+  int total = 0;
+  
+  //carregar cotações
+  Listar_cotacoes(lista, total);
+  total = CarregarArquivo(&lista);
+
 
   do {
         // Estrutura do Menu
@@ -79,6 +85,6 @@ int main() {
         printf("\n");
 
     } while (escolha != 5);
-
+free(lista);
 return 0;
 }

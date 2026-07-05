@@ -4,6 +4,7 @@
 //outras bibliotecas
 #include "veiculo.h"
 #include "condutor.h"
+#include "cotacao.h"
 
 typedef struct {
     Veiculo veiculo;

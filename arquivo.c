@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h> //biblioteca de tempo local
 #include "arquivo.h"
 
@@ -62,16 +64,15 @@ void CriarArquivo(Veiculo *v) {
     fprintf(file, "Modelo: %s\n", v->modelo);
     fprintf(file, "Ano: %d\n", v->ano);
     fprintf(file, "Valor: R$ %.2f\n", v->valor_mercado);
-    fprintf(file, "Tipo: %s\n", tipo_txt);
+    fprintf(file, "Tipo: %s\n", log);
     fprintf(file, "---------------------------\n\n");
 
     fclose(file);
 }
-int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova){
-    Cotacao *temp = realloc (*lista, (*total + 1)) * sizeof(Cotacao);
+int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
+    Cotacao *temp = realloc (*lista, (*total + 1) * sizeof(Cotacao));
 
-    if (temp == NUL
-    ){
+    if (temp == NULL){
         printf("Erro: nao foi possivel realocar memoria.\n");
     return 0;
 }
@@ -82,13 +83,13 @@ int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova){
 return 1;
 }
 
-int CarregarArquivo(Cotacao **lista[]) {
+int CarregarArquivo(Cotacao **lista) {
 
     FILE *arquivo;
     Cotacao temp;
     int total = 0;
 
-    *lista = NULL;
+
     arquivo = fopen("log", "rb");
 
     if (arquivo == NULL) {
@@ -96,17 +97,15 @@ int CarregarArquivo(Cotacao **lista[]) {
     }
 
     while (fread(&temp, sizeof(Cotacao), 1, arquivo) == 1) {
-        if(!adicionarCotacao(lista, &total, temp){
-            fclose(arquivo)
-            return total;
-        })
+        if(!adicionarCotacao(lista, &total, temp)){
+        }
     }
 
     fclose(arquivo);
     return total;
 }
 
-void SalvarArquivo(Cotacao *c) {
+int SalvarArquivo(Cotacao *c) {
 
     FILE *arquivo;
 
