@@ -5,6 +5,12 @@
 #include "relatorio.h"
 #include "linha.h"
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 //Mostra o tipo de veiculo
 
 char *tipo_de_veiculo(char tipo) {
@@ -25,12 +31,12 @@ void Listar_cotacoes(Cotacao *lista, int total) {
     system("clear");
 
     if (total == 0) {
-        printf("\n-> Nenhuma cotacao encontrada\n");
+        printf(ANSI_COLOR_RED"\n-> Nenhuma cotacao encontrada\n"ANSI_COLOR_RESET);
         return;
     }
     
 
-    printf("\n====== Lista de Cotacoes ======\n");
+    printf(ANSI_COLOR_YELLOW"\n====== Lista de Cotacoes ======\n"ANSI_COLOR_RESET);
 
     for (i = 0; i < total; i++) {
         Cotacao *c = &lista[i];
@@ -44,6 +50,7 @@ void Listar_cotacoes(Cotacao *lista, int total) {
     }
     linha();
 }
+
 //Filtra as cotacoes do condutor
 void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     int i;
@@ -52,8 +59,8 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
 
     system("clear");
 
-    printf("\n===== Busca por Condutor =====\n");
-    printf("Buscando por: %s\n\n", nome);
+    printf(ANSI_COLOR_YELLOW"\n===== Busca por Condutor =====\n"ANSI_COLOR_RESET);
+    printf(ANSI_COLOR_GREEN"Buscando por: %s\n\n" ANSI_COLOR_RESET ,nome);
 
     for (i = 0; i < total; i++) {
 
@@ -88,7 +95,7 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     }
 
     if (!achou) {
-        printf("-> Nenhum resultado encontrado para \"%s\".\n", nome);
+        printf(ANSI_COLOR_RED "-> Nenhum resultado encontrado para \"%s\".\n" ANSI_COLOR_RESET, nome);
     }
     linha();
 }
@@ -100,7 +107,7 @@ void menor_cotacao(Cotacao *lista, int total) {
     if (total == 0) {
         system("clear");
 
-        printf("-> Nenhuma cotacao foi registrada\n");
+        printf(ANSI_COLOR_RED"-> Nenhuma cotacao foi registrada\n" ANSI_COLOR_RESET);
         return;
     }
 
@@ -113,8 +120,8 @@ void menor_cotacao(Cotacao *lista, int total) {
     Cotacao *c = &lista[indice];
 
     system("clear");
-
-    printf("\n======= MENOR COTACAO ========\n");
+    linha();
+    printf(ANSI_COLOR_YELLOW"\n======= MENOR COTACAO ========\n"ANSI_COLOR_RESET);
     printf("Condutor : %s\n", c->condutor.nome);
     printf("Veiculo : %s %s (%d)\n", c->veiculo.marca, c->veiculo.modelo, c->veiculo.ano);
     printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);

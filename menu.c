@@ -10,6 +10,13 @@
 #include "relatorio.h"
 #include "linha.h"
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
+
 void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     int op;
     int temVeiculo = 0;
@@ -18,21 +25,21 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
 
     do {
         linha();
-        printf("         Menu de Cadastro        \n");
+        printf(ANSI_COLOR_YELLOW "         Menu de Cadastro        \n" ANSI_COLOR_RESET);
         linha();
         printf("1. Cadastrar veiculo\n");
         linha();
         printf("2. Exibir veiculo cadastrado\n");
         linha();
-        printf("3. Cadastrar condutor\n");
+        printf("3. Cadastrar condutor\n" );
         linha();
         printf("4. Exibir condutores cadastrados\n");
         linha();
-        printf("5. Calcular cotações \n");
+        printf("5. Calcular cotações \n" ANSI_COLOR_RESET);
         linha();
-        printf("6. Voltar\n");
+        printf(ANSI_COLOR_YELLOW "6. Voltar\n" ANSI_COLOR_RESET);
         linha();
-        printf("Escreva sua escolha: ");
+        printf(ANSI_COLOR_GREEN "Escreva sua escolha: "ANSI_COLOR_RESET);
 
         if (scanf("%d", &op) != 1) {
             system("clear");
@@ -65,7 +72,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
         case 5:
             if (!temVeiculo || !temCondutor) {
                 system("clear");
-                printf("\n-> Cadastre primeiro o veiculo e o condutor.\n");
+                printf(ANSI_COLOR_RED"\n-> Cadastre primeiro o veiculo e o condutor.\n"ANSI_COLOR_RESET);
                 break;
             }
 
@@ -77,24 +84,24 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
             if (adicionarCotacao(lista, total, nova) && SalvarArquivo(&nova)) {
                 system("clear");
 
-                printf("Cotacao salva com sucesso!\n");
+                printf(ANSI_COLOR_GREEN"Cotacao salva com sucesso!\n"ANSI_COLOR_RESET);
                 printf("Premio anual: R$ %.2f\n", nova.premio_anual);
                 printf("Premio mensal: R$ %.2f\n", nova.premio_mensal);
             } else {
                 system("clear");
 
-                printf("Erro ao salvar cotacao.\n");
+                printf(ANSI_COLOR_RED"Erro ao salvar cotacao.\n"ANSI_COLOR_RESET);
             }
             break;
 
         case 6:
             system("clear");
-            printf("\n-> Voltando ao menu principal");
+            printf(ANSI_COLOR_YELLOW"\n-> Voltando ao menu principal"ANSI_COLOR_RESET);
             break;
 
         default:
             system("clear");
-            printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
+            printf(ANSI_COLOR_RED"\n[Aviso] Opção incorreta! Tente novamente.\n"ANSI_COLOR_RESET);
         }
     }  while (op != 6);
 }
@@ -105,21 +112,21 @@ void menuRelatorio (Cotacao *lista, int total) {
 
     do {
         linha();
-        printf("         Menu de Relatorios        \n");
+        printf(ANSI_COLOR_GREEN"         Menu de Relatorios        \n"ANSI_COLOR_RESET);
         linha();
-        printf("1. Listar todas as cotacoes\n");
+        printf(ANSI_COLOR_YELLOW"1. Listar todas as cotacoes\n"ANSI_COLOR_RESET);
         linha();
-        printf("2. Filtrar por nome do condutor\n");
+        printf(ANSI_COLOR_YELLOW"2. Filtrar por nome do condutor\n"ANSI_COLOR_RESET);
         linha();
-        printf("3. Exibir menor cotacao\n");
+        printf(ANSI_COLOR_YELLOW"3. Exibir menor cotacao\n"ANSI_COLOR_RESET);
         linha();
-        printf("4. Voltar\n");
+        printf(ANSI_COLOR_YELLOW"4. Voltar\n"ANSI_COLOR_RESET);
         linha();
-        printf("Escreva sua escolha: ");
+        printf(ANSI_COLOR_GREEN"Escreva sua escolha: "ANSI_COLOR_RESET);
 
         if (scanf("%d", &op) != 1) {
             system("clear");
-            printf("Digite apenas numeros!\n");
+            printf(ANSI_COLOR_RED"Digite apenas numeros!\n"ANSI_COLOR_RESET);
             while (getchar() != '\n');
             op = -1;
             continue;

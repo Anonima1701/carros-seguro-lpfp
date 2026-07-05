@@ -4,7 +4,16 @@
 #include "veiculo.h"
 #include "linha.h"
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 void cadastrarVeiculo(Veiculo *v) {
+    
+    printf(ANSI_COLOR_YELLOW"\n------ Cadastro de Veiculo ------\n" ANSI_COLOR_RESET);
+
     printf("Digite a marca do veículo: ");
     scanf("%s", v->marca);
     while (getchar() != '\n');
@@ -27,18 +36,21 @@ void cadastrarVeiculo(Veiculo *v) {
         while (getchar() != '\n');
     } while (v->tipo != 'P' && v->tipo != 'U' && v->tipo != 'E');
 
-    printf("\nVeículo cadastrado com sucesso!\n");
-    system("clear");
+     system("clear");
+
+    printf(ANSI_COLOR_GREEN"\nVeículo cadastrado com sucesso!\n"ANSI_COLOR_RESET);
+
+   
 }
 
 void exibirVeiculo(Veiculo *v) {
     system("clear");
     if (v == NULL) {
-        printf("Veiculo inexistente!\n");
+        printf(ANSI_COLOR_RED"Veiculo inexistente!\n"ANSI_COLOR_RESET);
         return;
     }
 
-    printf("\n------ Informações do Veículo -------\n");
+    printf(ANSI_COLOR_YELLOW"\n------ Informações do Veículo -------\n"ANSI_COLOR_RESET);
     printf("Marca: %s\n", v->marca);
     printf("Modelo: %s\n", v->modelo);
     printf("Ano: %d\n", v->ano);
