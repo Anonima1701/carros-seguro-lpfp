@@ -22,22 +22,20 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     int temVeiculo = 0;
     int temCondutor = 0;
     Cotacao nova;
-
+    
     do {
-        system("clear");
-
         linha();
         printf(ANSI_COLOR_YELLOW "         Menu de Cadastro        \n" ANSI_COLOR_RESET);
         linha();
-        printf("1. Cadastrar veículo\n");
+        printf(ANSI_COLOR_GREEN "1. Cadastrar veículo\n" ANSI_COLOR_RESET);
         linha();
-        printf("2. Exibir veículo cadastrado\n");
+        printf(ANSI_COLOR_YELLOW"2. Exibir veículo cadastrado\n" ANSI_COLOR_RESET);
         linha();
-        printf("3. Cadastrar condutor\n" );
+        printf(ANSI_COLOR_GREEN "3. Cadastrar condutor\n" ANSI_COLOR_RESET);
         linha();
-        printf("4. Exibir condutores cadastrados\n");
+        printf(ANSI_COLOR_YELLOW "4. Exibir condutores cadastrados\n" ANSI_COLOR_RESET);
         linha();
-        printf("5. Calcular cotações \n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_GREEN "5. Calcular cotações \n" ANSI_COLOR_RESET);
         linha();
         printf(ANSI_COLOR_YELLOW "6. Voltar\n" ANSI_COLOR_RESET);
         linha();
