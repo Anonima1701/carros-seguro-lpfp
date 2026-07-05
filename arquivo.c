@@ -53,10 +53,10 @@ void CriarArquivo(Veiculo *v) {
 
     const char *log;
     switch (v->tipo) {
-        case 'P': log = "Passeio"; break;
-        case 'U': log = "Utilitário"; break;
-        case 'E': log = "Esportivo"; break;
-        default:  log = "Nenhum cadastrado"; break;
+    case 'P': log = "Passeio"; break;
+    case 'U': log = "Utilitário"; break;
+    case 'E': log = "Esportivo"; break;
+    default:  log = "Nenhum cadastrado"; break;
     }
 
     fprintf(file, "------ Veículo Salvo ------\n");
@@ -72,15 +72,15 @@ void CriarArquivo(Veiculo *v) {
 int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
     Cotacao *temp = realloc (*lista, (*total + 1) * sizeof(Cotacao));
 
-    if (temp == NULL){
+    if (temp == NULL) {
         printf("Erro: não foi possível realocar memória.\n");
-    return 0;
-}
-*lista = temp;
-(*lista)[*total] = nova;
-(*total)++;
+        return 0;
+    }
+    *lista = temp;
+    (*lista)[*total] = nova;
+    (*total)++;
 
-return 1;
+    return 1;
 }
 
 int CarregarArquivo(Cotacao **lista) {
@@ -97,7 +97,7 @@ int CarregarArquivo(Cotacao **lista) {
     }
 
     while (fread(&temp, sizeof(Cotacao), 1, arquivo) == 1) {
-        if(!adicionarCotacao(lista, &total, temp)){
+        if (!adicionarCotacao(lista, &total, temp)) {
         }
     }
 
@@ -116,10 +116,10 @@ int SalvarArquivo(Cotacao *c) {
         return 0;
     }
 
-   if (fwrite(c, sizeof(Cotacao), 1, arquivo) != 1){
-    printf("Erro ao salvar cotação.\n");
-    fclose(arquivo);
-   }
+    if (fwrite(c, sizeof(Cotacao), 1, arquivo) != 1) {
+        printf("Erro ao salvar cotação.\n");
+        fclose(arquivo);
+    }
 
     fclose(arquivo);
     return 1;

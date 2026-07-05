@@ -24,7 +24,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     Cotacao nova;
 
     do {
-    system("clear");
+        system("clear");
 
         linha();
         printf(ANSI_COLOR_YELLOW "         Menu de Cadastro        \n" ANSI_COLOR_RESET);
@@ -115,7 +115,7 @@ void menuRelatorio (Cotacao *lista, int total) {
     char nome[80];
 
     do {
-    system("clear");
+        system("clear");
 
         linha();
         printf(ANSI_COLOR_GREEN"         Menu de Relatorios        \n"ANSI_COLOR_RESET);

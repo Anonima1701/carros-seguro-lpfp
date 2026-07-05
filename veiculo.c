@@ -11,7 +11,7 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 void cadastrarVeiculo(Veiculo *v) {
-    
+
     printf(ANSI_COLOR_YELLOW"\n------ Cadastro de Veiculo ------\n" ANSI_COLOR_RESET);
 
     printf("Digite a marca do veículo: ");
@@ -44,16 +44,16 @@ void cadastrarVeiculo(Veiculo *v) {
 
     } while (v->tipo != 'P' && v->tipo != 'U' && v->tipo != 'E');
 
-     system("clear");
+    system("clear");
 
     printf(ANSI_COLOR_GREEN"\nVeículo cadastrado com sucesso!\n"ANSI_COLOR_RESET);
 
-   
+
 }
 //Função para exibir veículo
 void exibirVeiculo(Veiculo *v) {
     system("clear");
-    
+
     if (v == NULL) {
         printf(ANSI_COLOR_RED"Veículo inexistente!\n"ANSI_COLOR_RESET);
         return;

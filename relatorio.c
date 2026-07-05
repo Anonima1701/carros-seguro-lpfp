@@ -34,7 +34,6 @@ void Listar_cotacoes(Cotacao *lista, int total) {
         printf(ANSI_COLOR_RED"\n-> Nenhuma cotacao encontrada\n"ANSI_COLOR_RESET);
         return;
     }
-    
 
     printf(ANSI_COLOR_YELLOW"\n====== Lista de Cotacoes ======\n"ANSI_COLOR_RESET);
 
@@ -60,7 +59,7 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     system("clear");
 
     printf(ANSI_COLOR_YELLOW"\n===== Busca por Condutor =====\n"ANSI_COLOR_RESET);
-    printf(ANSI_COLOR_GREEN"Buscando por: %s\n\n" ANSI_COLOR_RESET ,nome);
+    printf(ANSI_COLOR_GREEN"Buscando por: %s\n\n" ANSI_COLOR_RESET , nome);
 
     for (i = 0; i < total; i++) {
 

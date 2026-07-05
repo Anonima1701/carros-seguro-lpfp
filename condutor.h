@@ -3,7 +3,7 @@
 
 typedef struct {
     char nome[80];
-    char rg[5]; 
+    char rg[5];
     int idade;
     int sinistros;
     char cnh;
@@ -11,6 +11,6 @@ typedef struct {
 
 void cadastrar_condutor(Condutor *c);
 void exibir_condutor(Condutor *c);
-void pausar(); 
+void pausar();
 
 #endif
