@@ -60,7 +60,7 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
         int j = 0;
         int igual = 1;
 
-        while (nome[j] != '\0' || lista[i].condutor.nome[j] != '\0') {
+        while (nome[j] != '\0' && lista[i].condutor.nome[j] != '\0') {
 
             if (nome[j] != lista[i].condutor.nome[j]) {
                 igual = 0;
@@ -68,6 +68,10 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
             }
 
             j++;
+        }
+
+        if (nome[j] != '\0' || lista[i].condutor.nome[j] != '\0') {
+            igual = 0;
         }
 
         if (igual == 1) {

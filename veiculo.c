@@ -3,11 +3,14 @@
 #include <stdlib.h>
 #include "veiculo.h"
 #include "linha.h"
-
+//Função para cadastrar veículo
 void cadastrarVeiculo(Veiculo *v) {
+    system("clear");
+
+    printf("\n------ Cadastro de Veículo ------\n");
     printf("Digite a marca do veículo: ");
     scanf("%s", v->marca);
-    while (getchar() != '\n');
+    while (getchar() != '\n'); // Limpar o buffer de entrada
 
     printf("Digite o modelo do veículo: ");
     scanf("%s", v->modelo);
@@ -20,21 +23,30 @@ void cadastrarVeiculo(Veiculo *v) {
     printf("Digite o valor do veículo: R$ ");
     scanf("%f", &v->valor_mercado);
     while (getchar() != '\n');
-
+// Loop para garantir que o tipo do veículo seja válido
     do {
         printf("Digite o tipo do veículo (P-Passeio, U-Utilitário, E-Esportivo): ");
         scanf(" %c", &v->tipo);
-        while (getchar() != '\n');
+// Converte o tipo para maiúsculo, se o usuário digitou em minúsculo.
+        if (v->tipo == 'p') {
+            v->tipo = 'P';
+        } else if (v->tipo == 'u') {
+            v->tipo = 'U';
+        } else if (v->tipo == 'e') {
+            v->tipo = 'E';
+        }
+
     } while (v->tipo != 'P' && v->tipo != 'U' && v->tipo != 'E');
 
     printf("\nVeículo cadastrado com sucesso!\n");
     system("clear");
 }
-
+//Função para exibir veículo
 void exibirVeiculo(Veiculo *v) {
     system("clear");
+    
     if (v == NULL) {
-        printf("Veiculo inexistente!\n");
+        printf("Veículo inexistente!\n");
         return;
     }
 
@@ -42,7 +54,7 @@ void exibirVeiculo(Veiculo *v) {
     printf("Marca: %s\n", v->marca);
     printf("Modelo: %s\n", v->modelo);
     printf("Ano: %d\n", v->ano);
-    printf("Valor: R$ %.2f\n", v->valor_mercado);
+    printf("Valor: R$ %f\n", v->valor_mercado);
 
     printf("Tipo: ");
     switch (v->tipo) {
@@ -59,4 +71,5 @@ void exibirVeiculo(Veiculo *v) {
         printf("Tipo desconhecido\n");
         break;
     }
+    pausar();
 }

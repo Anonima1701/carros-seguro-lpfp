@@ -2,5 +2,6 @@
 #define LINHA_H 
 
 void linha ();
+void pausar();
 
 #endif

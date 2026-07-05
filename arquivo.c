@@ -18,7 +18,7 @@ void verificarExistencia() {
 
     if (file == NULL) {
 
-        printf("Arquivo nao existe. Criando %s...\n", filename);
+        printf("Arquivo não existe. Criando %s...\n", filename);
 
         file = fopen(filename, "w");
 
@@ -28,14 +28,14 @@ void verificarExistencia() {
         }
 
         // Cabeçalho do arquivo
-        fprintf(file, "--- Inicio do Log ---\n");
+        fprintf(file, "--- Início do Log ---\n");
         fprintf(file, "%s", asctime(tm));
 
         fclose(file);
 
     } else {
 
-        printf("O arquivo ja existe. Pronto para uso.\n");
+        printf("Arquivo %s já existe. Pronto para uso.\n", filename);
 
         fclose(file);
     }
@@ -47,7 +47,7 @@ void CriarArquivo(Veiculo *v) {
 
     // Verifica Existencia
     if (file == NULL) {
-        perror("Erro ao abrir o arquivo para salvar o veículo");
+        perror("Erro ao abrir o arquivo para salvar o veículo.");
         return;
     }
 
@@ -63,7 +63,7 @@ void CriarArquivo(Veiculo *v) {
     fprintf(file, "Marca: %s\n", v->marca);
     fprintf(file, "Modelo: %s\n", v->modelo);
     fprintf(file, "Ano: %d\n", v->ano);
-    fprintf(file, "Valor: R$ %.2f\n", v->valor_mercado);
+    fprintf(file, "Valor: R$ %f\n", v->valor_mercado);
     fprintf(file, "Tipo: %s\n", log);
     fprintf(file, "---------------------------\n\n");
 
@@ -73,7 +73,7 @@ int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
     Cotacao *temp = realloc (*lista, (*total + 1) * sizeof(Cotacao));
 
     if (temp == NULL){
-        printf("Erro: nao foi possivel realocar memoria.\n");
+        printf("Erro: não foi possível realocar memória.\n");
     return 0;
 }
 *lista = temp;
@@ -117,7 +117,7 @@ int SalvarArquivo(Cotacao *c) {
     }
 
    if (fwrite(c, sizeof(Cotacao), 1, arquivo) != 1){
-    printf("Erro ao salvar cotação\n");
+    printf("Erro ao salvar cotação.\n");
     fclose(arquivo);
    }
 

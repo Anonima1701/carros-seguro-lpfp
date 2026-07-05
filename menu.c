@@ -17,12 +17,14 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
     Cotacao nova;
 
     do {
+    system("clear");
+
         linha();
         printf("         Menu de Cadastro        \n");
         linha();
-        printf("1. Cadastrar veiculo\n");
+        printf("1. Cadastrar veículo\n");
         linha();
-        printf("2. Exibir veiculo cadastrado\n");
+        printf("2. Exibir veículo cadastrado\n");
         linha();
         printf("3. Cadastrar condutor\n");
         linha();
@@ -32,7 +34,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
         linha();
         printf("6. Voltar\n");
         linha();
-        printf("Escreva sua escolha: ");
+        printf("Digite sua escolha: ");
 
         if (scanf("%d", &op) != 1) {
             system("clear");
@@ -65,7 +67,7 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
         case 5:
             if (!temVeiculo || !temCondutor) {
                 system("clear");
-                printf("\n-> Cadastre primeiro o veiculo e o condutor.\n");
+                printf("\n-> Cadastre primeiro o veículo e o condutor.\n");
                 break;
             }
 
@@ -77,14 +79,16 @@ void menuCadastro(Veiculo *v, Condutor *c, Cotacao **lista, int *total) {
             if (adicionarCotacao(lista, total, nova) && SalvarArquivo(&nova)) {
                 system("clear");
 
-                printf("Cotacao salva com sucesso!\n");
-                printf("Premio anual: R$ %.2f\n", nova.premio_anual);
-                printf("Premio mensal: R$ %.2f\n", nova.premio_mensal);
+                printf("Cotação salva com sucesso!\n");
+                printf("Prêmio anual: R$ %.2f\n", nova.premio_anual);
+                printf("Prêmio mensal: R$ %.2f\n", nova.premio_mensal);
             } else {
                 system("clear");
 
-                printf("Erro ao salvar cotacao.\n");
+                printf("Erro ao salvar cotação.\n");
             }
+
+            pausar();
             break;
 
         case 6:
@@ -104,22 +108,24 @@ void menuRelatorio (Cotacao *lista, int total) {
     char nome[80];
 
     do {
+    system("clear");
+
         linha();
-        printf("         Menu de Relatorios        \n");
+        printf("         Menu de Relatórios        \n");
         linha();
-        printf("1. Listar todas as cotacoes\n");
+        printf("1. Listar todas as cotações\n");
         linha();
         printf("2. Filtrar por nome do condutor\n");
         linha();
-        printf("3. Exibir menor cotacao\n");
+        printf("3. Exibir menor cotação\n");
         linha();
         printf("4. Voltar\n");
         linha();
-        printf("Escreva sua escolha: ");
+        printf("Digite sua escolha: ");
 
         if (scanf("%d", &op) != 1) {
             system("clear");
-            printf("Digite apenas numeros!\n");
+            printf("Digite apenas números!\n");
             while (getchar() != '\n');
             op = -1;
             continue;
@@ -129,6 +135,7 @@ void menuRelatorio (Cotacao *lista, int total) {
         switch (op) {
         case 1:
             Listar_cotacoes(lista, total);
+            pausar();
             break;
 
         case 2:
@@ -142,10 +149,12 @@ void menuRelatorio (Cotacao *lista, int total) {
             nome[i] = '\0';
 
             filtrar_por_condutor(lista, total, nome);
+            pausar();
             break;
 
         case 3:
             menor_cotacao(lista, total);
+            pausar();
             break;
 
         case 4:
@@ -158,25 +167,3 @@ void menuRelatorio (Cotacao *lista, int total) {
         }
     } while (op != 4);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

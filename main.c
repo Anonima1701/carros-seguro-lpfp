@@ -12,31 +12,29 @@
 
 //Função principal
 int main() {
-    setlocale(LC_ALL, "Portuguese_Brazil"); //para ser aceito caracteres especiais.
-
+    setlocale(LC_ALL, ""); //para ser aceito caracteres especiais.
 
     //Variaveis
     Veiculo v;
-    int escolha;
     Condutor c;
     Cotacao *lista = NULL;
     int total = 0;
+    int escolha;
 
     //carregar cotações
     Listar_cotacoes(lista, total);
     total = CarregarArquivo(&lista);
 
-    system("clear");
-
     do {
         // Estrutura do Menu
+        system("clear");
 
         linha();
         printf("         Menu Principal        \n");
         linha();
-        printf("1. Cadastro (Veiculo,condutor e calculo de premio)\n");
+        printf("1. Cadastro (Veículo,condutor e cálculo de prêmio)\n");
         linha();
-        printf("2. Relatorios\n");
+        printf("2. Relatórios\n");
         linha();
         printf("3. Exit\n");
         linha();
@@ -46,9 +44,9 @@ int main() {
         if (scanf("%d", &escolha) != 1) {
             printf("Digite apenas numeros!\n");
         } else if (escolha < 1 || escolha > 3) {
-            printf("Opcao invalida!\n");
+            printf("Opção inválida!\n");
         } else {
-            printf("Opcao escolhida: %d\n", escolha);
+            printf("Opção escolhida: %d\n", escolha);
         }
 
         // Opções a serem usadas

@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "condutor.h"
+#include "linha.h"
 
 // cadastro do condutor
 void cadastrar_condutor(Condutor *c) {
@@ -16,7 +17,7 @@ void cadastrar_condutor(Condutor *c) {
     // Validação do RG
     while (1) {
 
-        printf("RG (Primeiros 5 digitos): ");
+        printf("RG (Primeiros 5 dígitos): ");
         scanf("%s", c->rg);
 
         int tamanho = 0;
@@ -41,7 +42,7 @@ void cadastrar_condutor(Condutor *c) {
                 break;
         }
 
-        printf("Erro: O RG deve ter exatamente 5 numeros.\n");
+        printf("Erro: O RG deve ter exatamente 5 números.\n");
     }
 
     // Validacão da idade
@@ -50,16 +51,16 @@ void cadastrar_condutor(Condutor *c) {
         if (scanf("%d", &c->idade) == 1 && c->idade >= 18 && c->idade <= 75) {
             break;
         }
-        printf("Erro: Idade invalida (deve ser maior de 18).\n");
+        printf("Erro: Idade ínvalida (deve ser maior de 18 anos).\n");
     }
 
     // Validação dos sinistros
     while (1) {
-        printf("Numero de sinistros (ultimos 3 anos): ");
+        printf("Número de sinistros (últimos 3 anos): ");
         if (scanf("%d", &c->sinistros) == 1 && c->sinistros >= 0) {
             break;
         }
-        printf("Erro: Quantidade invalida.\n");
+        printf("Erro: Quantidade inválida.\n");
     }
 
 
@@ -83,7 +84,7 @@ void cadastrar_condutor(Condutor *c) {
             break;
         }
 
-        printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
+        printf("Erro: Categoria inválida. Escolha A, B ou C.\n");
     }
 }
 // exibição do condutor
@@ -96,4 +97,6 @@ void exibir_condutor(Condutor *c) {
     printf("Idade: %d anos\n", c->idade);
     printf("Sinistros: %d\n", c->sinistros);
     printf("CNH: %c\n", c->cnh);
+
+    pausar();
 }
