@@ -78,7 +78,7 @@ int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
 }
 *lista = temp;
 (*lista)[*total] = nova;
-*(total)++;
+(*total)++;
 
 return 1;
 }
