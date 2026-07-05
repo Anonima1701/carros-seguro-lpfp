@@ -11,7 +11,7 @@
 
 //função linha
 void linha () {
-  printf("======================================\n");
+    printf("======================================\n");
 }
 
 //funcao pausar
@@ -22,28 +22,28 @@ void pausar() {
 
 //Função principal
 int main() {
-  setlocale(LC_ALL, "Portuguese_Brazil"); //para ser aceito caracteres especiais.
+    setlocale(LC_ALL, "Portuguese_Brazil"); //para ser aceito caracteres especiais.
 
 
-  //Variaveis
-  Veiculo v;
-  int escolha;
-  Condutor c;
-  Cotacao *lista = NULL;
-  int total = 0;
+    //Variaveis
+    Veiculo v;
+    int escolha;
+    Condutor c;
+    Cotacao *lista = NULL;
+    int total = 0;
 
-  //carregar cotações
-  Listar_cotacoes(lista, total);
-  total = CarregarArquivo(&lista);
+    //carregar cotações
+    Listar_cotacoes(lista, total);
+    total = CarregarArquivo(&lista);
 
-  system("Clear");
+    system("clear");
 
-  do {
+    do {
         // Estrutura do Menu
 
         linha();
         printf("       Menu Principal         \n");
-        linha();  
+        linha();
         printf("1. Cadastro (Veiculo,condutor e calculo de premio)\n");
         linha();
         printf("2. Relatorios\n");
@@ -60,33 +60,33 @@ int main() {
         } else {
             printf("Opcao escolhida: %d\n", escolha);
         }
-    
+
         // Opções a serem usadas
         switch (escolha) {
-            case 1:
-                system("clear");
-                printf("\n-> Abrindo aba de cadastro\n");
-                menuCadastro(&v, &c, &lista, &total);
+        case 1:
+            system("clear");
+            printf("\n-> Abrindo aba de cadastro\n");
+            menuCadastro(&v, &c, &lista, &total);
             break;
 
-            case 2 :
-                system("clear");
-                printf("\n-> Abrindo Relatórios\n");
-                menuRelatorio(lista, total);
+        case 2 :
+            system("clear");
+            printf("\n-> Abrindo Relatórios\n");
+            menuRelatorio(lista, total);
             break;
 
-            case 3:
-                system("clear");
-                printf("\n Finalizando tarefa!\n");
+        case 3:
+            system("clear");
+            printf("\n Finalizando tarefa!\n");
             break;
 
-            default:
-                printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
+        default:
+            printf("\n[Aviso] Opção incorreta! Tente novamente.\n");
         }
-        
+
         printf("\n");
 
     } while (escolha != 3);
-free(lista);
-return 0;
+    free(lista);
+    return 0;
 }

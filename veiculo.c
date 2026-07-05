@@ -13,7 +13,7 @@ void cadastrarVeiculo(Veiculo *v) {
     while (getchar() != '\n');
 
     printf("Digite o ano do veículo: ");
-    scanf("%d", &v->ano);  
+    scanf("%d", &v->ano);
     while (getchar() != '\n');
 
     printf("Digite o valor do veículo: R$ ");
@@ -25,12 +25,13 @@ void cadastrarVeiculo(Veiculo *v) {
         scanf(" %c", &v->tipo);
         while (getchar() != '\n');
     } while (v->tipo != 'P' && v->tipo != 'U' && v->tipo != 'E');
-        
+
     printf("\nVeículo cadastrado com sucesso!\n");
+    system("clear");
 }
 
 void exibirVeiculo(Veiculo *v) {
-    //system("clear");
+    system("clear");
     if (v == NULL) {
         printf("Veiculo inexistente!\n");
         return;
@@ -41,20 +42,20 @@ void exibirVeiculo(Veiculo *v) {
     printf("Modelo: %s\n", v->modelo);
     printf("Ano: %d\n", v->ano);
     printf("Valor: R$ %.2f\n", v->valor_mercado);
-    
+
     printf("Tipo: ");
     switch (v->tipo) {
-        case 'P':
-            printf("Passeio\n");
-            break;
-        case 'U':
-            printf("Utilitário\n");
-            break;
-        case 'E':
-            printf("Esportivo\n");
-            break;
-        default:
-            printf("Tipo desconhecido\n");
-            break;
+    case 'P':
+        printf("Passeio\n");
+        break;
+    case 'U':
+        printf("Utilitário\n");
+        break;
+    case 'E':
+        printf("Esportivo\n");
+        break;
+    default:
+        printf("Tipo desconhecido\n");
+        break;
     }
 }

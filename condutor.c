@@ -5,6 +5,8 @@
 
 // cadastro do condutor
 void cadastrar_condutor(Condutor *c) {
+    system("clear");
+
     printf("\n--- CADASTRO DE CONDUTOR ---\n");
 
     printf("Nome completo: ");
@@ -14,33 +16,33 @@ void cadastrar_condutor(Condutor *c) {
     // Validação do RG
     while (1) {
 
-    printf("RG (Primeiros 5 digitos): ");
-    scanf("%s", c->rg);
+        printf("RG (Primeiros 5 digitos): ");
+        scanf("%s", c->rg);
 
-    int tamanho = 0;
+        int tamanho = 0;
 
-    while (c->rg[tamanho] != '\0')
-        tamanho++;
+        while (c->rg[tamanho] != '\0')
+            tamanho++;
 
-    if (tamanho == 5) {
+        if (tamanho == 5) {
 
-        int ok = 1;
+            int ok = 1;
 
-        for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i++) {
 
-            if (c->rg[i] < '0' || c->rg[i] > '9') {
-                ok = 0;
-                break;
+                if (c->rg[i] < '0' || c->rg[i] > '9') {
+                    ok = 0;
+                    break;
+                }
+
             }
 
+            if (ok)
+                break;
         }
 
-        if (ok)
-            break;
+        printf("Erro: O RG deve ter exatamente 5 numeros.\n");
     }
-
-    printf("Erro: O RG deve ter exatamente 5 numeros.\n");
-}
 
     // Validacão da idade
     while (1) {
@@ -64,28 +66,29 @@ void cadastrar_condutor(Condutor *c) {
     // Validação da cnh
     while (1) {
 
-    printf("Categoria da CNH (A, B ou C): ");
-    scanf(" %c", &c->cnh);
+        printf("Categoria da CNH (A, B ou C): ");
+        scanf(" %c", &c->cnh);
 
-    if (c->cnh == 'a') {
-        c->cnh = 'A';
-    }
-    else if (c->cnh == 'b') {
-        c->cnh = 'B';
-    }
-    else if (c->cnh == 'c') {
-        c->cnh = 'C';
-    }
+        if (c->cnh == 'a') {
+            c->cnh = 'A';
+        }
+        else if (c->cnh == 'b') {
+            c->cnh = 'B';
+        }
+        else if (c->cnh == 'c') {
+            c->cnh = 'C';
+        }
 
-    if (c->cnh == 'A' || c->cnh == 'B' || c->cnh == 'C') {
-        break;
-    }
+        if (c->cnh == 'A' || c->cnh == 'B' || c->cnh == 'C') {
+            break;
+        }
 
-    printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
-}
+        printf("Erro: Categoria invalida. Escolha A, B ou C.\n");
+    }
 }
 // exibição do condutor
 void exibir_condutor(Condutor *c) {
+    system("clear");
 
     printf("\n---------------------------------\n");
     printf("Nome: %s\n", c->nome);

@@ -3,29 +3,29 @@
 #include <string.h>
 #include "relatorio.h"
 
-//Mostra o tipo de veiculo 
+//Mostra o tipo de veiculo
 
-char *tipo_de_veiculo(char tipo){
-     if (tipo == 'P') 
-     return "PASSEIO";
+char *tipo_de_veiculo(char tipo) {
+    if (tipo == 'P')
+        return "PASSEIO";
 
-     if(tipo == 'U')
-     return "UTILITARIO";
+    if (tipo == 'U')
+        return "UTILITARIO";
 
-     if (tipo == 'E')
-     return "ESPORTIVO";
+    if (tipo == 'E')
+        return "ESPORTIVO";
 
-     return "DESCONHECIDO";
+    return "DESCONHECIDO";
 }
- //Lista as cotacoes salvas             
+//Lista as cotacoes salvas
 void Listar_cotacoes(Cotacao *lista, int total) {
     int i;
 
     if (total == 0) {
         printf("Nemhuma cotacao encontrada\n");
         return;
-    }   
-    
+    }
+
     printf("\n====== Lista de Cotacoes ======\n");
 
     for (i = 0; i < total; i++) {
@@ -41,7 +41,7 @@ void Listar_cotacoes(Cotacao *lista, int total) {
     printf("\n==================================\n");
 }
 //Filtra as cotacoes do condutor
-void filtrar_por_condutor(Cotacao *lista, int total, char *nome){
+void filtrar_por_condutor(Cotacao *lista, int total, char *nome) {
     int i;
     int achou = 0;
     Cotacao *c;
@@ -51,66 +51,66 @@ void filtrar_por_condutor(Cotacao *lista, int total, char *nome){
 
     for (i = 0; i < total; i++) {
 
-    int j = 0;
-    int igual = 1;
+        int j = 0;
+        int igual = 1;
 
-    while (nome[j] != '\0' || lista[i].condutor.nome[j] != '\0') {
+        while (nome[j] != '\0' || lista[i].condutor.nome[j] != '\0') {
 
-        if (nome[j] != lista[i].condutor.nome[j]) {
-            igual = 0;
-            break;
+            if (nome[j] != lista[i].condutor.nome[j]) {
+                igual = 0;
+                break;
+            }
+
+            j++;
         }
 
-        j++;
+        if (igual == 1) {
+
+            c = &lista[i];
+
+            printf("[%d] %s - %s %s\n",
+                   i + 1,
+                   c->condutor.nome,
+                   c->veiculo.marca,
+                   c->veiculo.modelo);
+
+            printf(" Premio anual : R$ %.2f\n", c->premio_anual);
+            printf(" Data: %s\n", c->data);
+
+            achou = 1;
+        }
     }
 
-    if (igual == 1) {
-
-        c = &lista[i];
-
-        printf("[%d] %s - %s %s\n",
-               i + 1,
-               c->condutor.nome,
-               c->veiculo.marca,
-               c->veiculo.modelo);
-
-        printf(" Premio anual : R$ %.2f\n", c->premio_anual);
-        printf(" Data: %s\n", c->data);
-
-        achou = 1;
+    if (!achou) {
+        printf("Nenhum resultado encontrado para \"%s\".\n", nome);
     }
+    printf("\n==================================\n");
 }
 
- if(!achou) {
-    printf("Nenhum resultado encontrado para \"%s\".\n", nome);
-}
- printf("\n==================================\n");
-}
- 
 void menor_cotacao(Cotacao *lista, int total) {
     int i;
     int indice = 0;
 
-    if(total == 0) {
-       printf("Nenhuma cotacao foi registrada\n");
-       return;
+    if (total == 0) {
+        printf("Nenhuma cotacao foi registrada\n");
+        return;
+    }
+
+    for (i = 0; i < total; i++) {
+        if (lista[i].premio_anual < lista[indice].premio_anual) {
+            indice = i;
+        }
+    }
+
+    Cotacao *c = &lista[indice];
+
+    printf("\n======= MENOR COTACAO ========\n");
+    printf("Condutor : %s\n", c->condutor.nome);
+    printf("Veiculo : %s %s (%d)\n", c->veiculo.marca, c->veiculo.modelo, c->veiculo.ano);
+    printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);
+    printf("Data : %s\n", c->data);
+    printf("==================================\n");
 }
 
-for (i = 0; i < total; i++) {
-    if(lista[i].premio_anual < lista[indice].premio_anual) {
-      indice = i;
-   }
-} 
-  
-  Cotacao *c = &lista[indice];
 
-  printf("\n======= MENOR COTACAO ========\n");
-  printf("Condutor : %s\n", c->condutor.nome);
-  printf("Veiculo : %s %s (%d)\n", c->veiculo.marca, c->veiculo.modelo, c->veiculo.ano);
-  printf("Premio: R$ %.2f/ano\n | R$ %.2f/mes\n", c->premio_anual, c->premio_mensal);
-  printf("Data : %s\n", c->data);
-  printf("==================================\n");
-}
- 
-   
 
