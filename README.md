@@ -16,7 +16,7 @@ Sistema de cotação de carros:
   4. Pedro Lucas Gomes Louzeiro - 20261SI0009
   5. Ulisses Heitor Araujo Matos - 20261SI0019
 
-- Descrição do Sistema
-  Sistema em C para gerenciamento de cotações de seguros de automóveis,
+- Descrição do Sistema:
+  Feito em C para gerenciamento de cotações de seguros de automóveis,
   com cadastro, consulta, edição, exclusão, persistência em arquivo e uso 
   de alocação dinâmica de memória.

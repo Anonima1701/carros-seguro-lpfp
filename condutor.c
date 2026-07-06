@@ -54,21 +54,43 @@ void cadastrar_condutor(Condutor *c) {
 
     // Validacão da idade
     while (1) {
-        printf("Idade: ");
-        if (scanf("%d", &c->idade) == 1 && c->idade >= 18 && c->idade <= 75) {
-            break;
-        }
-        printf(ANSI_COLOR_RED "Erro: Idade inválida (deve ser maior de 18 anos).\n" ANSI_COLOR_RESET);
+    printf("Idade: ");
+
+    if (scanf("%d", &c->idade) != 1) {
+        printf(ANSI_COLOR_RED "Erro: Digite apenas números.\n" ANSI_COLOR_RESET);
+
+        while (getchar() != '\n'); // Limpa o buffer
+        continue;
     }
+
+    if (c->idade >= 18 && c->idade <= 75) {
+        break;
+    }
+
+    printf(ANSI_COLOR_RED "Erro: A idade deve estar entre 18 e 75 anos.\n" ANSI_COLOR_RESET);
+
+    while (getchar() != '\n'); // Limpa o Enter
+}
 
     // Validação dos sinistros
     while (1) {
-        printf("Número de sinistros (últimos 3 anos): ");
-        if (scanf("%d", &c->sinistros) == 1 && c->sinistros >= 0) {
-            break;
-        }
-        printf(ANSI_COLOR_RED "Erro: Quantidade inválida.\n" ANSI_COLOR_RESET);
+    printf("Número de sinistros (últimos 3 anos): ");
+
+    if (scanf("%d", &c->sinistros) != 1) {
+        printf(ANSI_COLOR_RED "Erro: Digite apenas números.\n" ANSI_COLOR_RESET);
+
+        while (getchar() != '\n'); // Limpa o buffer
+        continue;
     }
+
+    if (c->sinistros >= 0) {
+        break;
+    }
+
+    printf(ANSI_COLOR_RED "Erro: A quantidade de sinistros não pode ser negativa.\n" ANSI_COLOR_RESET);
+
+    while (getchar() != '\n'); // Limpa o Enter
+}
 
 
     // Validação da cnh
