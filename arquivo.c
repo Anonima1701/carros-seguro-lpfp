@@ -93,6 +93,8 @@ int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
 
 (*lista)[*total] = nova;
 (*total)++;
+return 1;
+}
 
 int CarregarArquivo(Cotacao **lista) {
 
