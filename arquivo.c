@@ -70,18 +70,29 @@ void CriarArquivo(Veiculo *v) {
     fclose(file);
 }
 int adicionarCotacao(Cotacao **lista, int *total, Cotacao nova) {
-    Cotacao *temp = realloc (*lista, (*total + 1) * sizeof(Cotacao));
+    if (*lista == NULL) {
 
-    if (temp == NULL) {
-        printf("Erro: Não foi possível realocar memória.\n");
-        return 0;
+    *lista = (Cotacao *)malloc(sizeof(Cotacao));
+
+    if (*lista == NULL) {
+        printf("Erro: Não foi possível alocar memória.\n");
+        return 0;    
     }
-    *lista = temp;
-    (*lista)[*total] = nova;
-    (*total)++;
+   } else {
+    
+     Cotacao *temp = (Cotacao *)realloc(*lista,
+                                        (*total + 1) * sizeof(Cotacao));
 
-    return 1;
+    if (temp == NULL){
+       printf("Erro de realocação!\n");
+       return 0;
+    }
+   
+   *lista = temp;
 }
+
+(*lista)[*total] = nova;
+(*total)++;
 
 int CarregarArquivo(Cotacao **lista) {
 
