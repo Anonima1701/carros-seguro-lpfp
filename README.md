@@ -10,11 +10,11 @@ Sistema de cotação de carros:
   $ ./cotacao
   ```
 - Nome dos integrantes:
-  1. Brenda Gabriela Nunes Reis(Lider) - 20261SI0011
-  2. Isaac França de Lima Marchão - 20261SI0029
-  3. Lauana Victória Da Costa Leite - 20242SI0004 
-  4. Pedro Lucas Gomes Louzeiro - 20261SI0009
-  5. Ulisses Heitor Araujo Matos - 20261SI0019
+  1. Brenda Gabriela Nunes Reis(Lider) - anonima1701 - 20261SI0011
+  2. Isaac França de Lima Marchão - isaacfrancamarchao-glitch - 20261SI0029
+  3. Lauana Victória Da Costa Leite - lauannav - 20242SI0004 
+  4. Pedro Lucas Gomes Louzeiro - gomeszpl - 20261SI0009
+  5. Ulisses Heitor Araujo Matos - hulisses-ham - 20261SI0019
 
 - Descrição do Sistema:
   Feito em C para gerenciamento de cotações de seguros de automóveis,
