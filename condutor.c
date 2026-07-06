@@ -58,7 +58,7 @@ void cadastrar_condutor(Condutor *c) {
         if (scanf("%d", &c->idade) == 1 && c->idade >= 18 && c->idade <= 75) {
             break;
         }
-        printf(ANSI_COLOR_RED "Erro: Idade invalida (deve ser maior de 18).\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_RED "Erro: Idade inválida (deve ser maior de 18 anos).\n" ANSI_COLOR_RESET);
     }
 
     // Validação dos sinistros
@@ -67,7 +67,7 @@ void cadastrar_condutor(Condutor *c) {
         if (scanf("%d", &c->sinistros) == 1 && c->sinistros >= 0) {
             break;
         }
-        printf(ANSI_COLOR_RED "Erro: Quantidade invalida.\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_RED "Erro: Quantidade inválida.\n" ANSI_COLOR_RESET);
     }
 
 
@@ -91,7 +91,7 @@ void cadastrar_condutor(Condutor *c) {
             break;
         }
 
-        printf(ANSI_COLOR_RED "Erro: Categoria invalida. Escolha A, B ou C.\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_RED "Erro: Categoria inválida. Escolha A, B ou C.\n" ANSI_COLOR_RESET);
     }
     printf(ANSI_COLOR_GREEN "\n-> Condutor cadastrado com sucesso\n" ANSI_COLOR_RESET);
 }

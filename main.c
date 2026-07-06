@@ -40,17 +40,17 @@ int main() {
         linha();
         printf(ANSI_COLOR_GREEN "         Menu Principal        \n" ANSI_COLOR_RESET);
         linha();
-        printf(ANSI_COLOR_YELLOW "1. Cadastro (Veiculo,condutor e calculo de premio)\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_YELLOW "1. Cadastro (Veículo,condutor e cálculo de prêmio)\n" ANSI_COLOR_RESET);
         linha();
-        printf(ANSI_COLOR_YELLOW "2. Relatorios\n" ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_YELLOW "2. Relatórios\n" ANSI_COLOR_RESET);
         linha();
         printf(ANSI_COLOR_RED "3. Exit\n" ANSI_COLOR_RESET);
         linha();
-        printf(ANSI_COLOR_GREEN "Escreva sua escolha: "ANSI_COLOR_RESET);
+        printf(ANSI_COLOR_GREEN "Digite sua escolha: "ANSI_COLOR_RESET);
 
         // Verificação de escolha
         if (scanf("%d", &escolha) != 1) {
-            printf(ANSI_COLOR_RED "Digite apenas numeros!\n" ANSI_COLOR_RESET);
+            printf(ANSI_COLOR_RED "Digite apenas números!\n" ANSI_COLOR_RESET);
             while (getchar() != '\n');
             escolha = -1;
         }

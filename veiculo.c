@@ -13,7 +13,7 @@
 
 void cadastrarVeiculo(Veiculo *v) {
 
-    printf(ANSI_COLOR_YELLOW "\n------ Cadastro de Veiculo ------\n" ANSI_COLOR_RESET);
+    printf(ANSI_COLOR_YELLOW "\n------ Cadastro de Veículo ------\n" ANSI_COLOR_RESET);
 
     printf("Digite a marca do veículo: ");
     scanf("%s", v->marca);
